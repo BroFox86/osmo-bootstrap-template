@@ -57,14 +57,18 @@
 
   &-link {
     color: white;
-    font-weight: 500;
+    font-weight: 600;
 
     @include media-breakpoint-up(md) {
-      color: lighten($gray-600, 5);
+      color: $gray-600;
     }
 
     &:hover {
       color: white;
+
+      @include media-breakpoint-up(md) {
+        color: $gray-900;
+      }
     }
   }
 
