@@ -1,0 +1,70 @@
+mixin header
+  header.site-nav.position-fixed.fixed-top
+    nav.navbar.navbar-expand-md.p-md-3
+      .container.site-nav-container
+        .hamburger.d-md-none(data-toggle="menuToggler")
+          .hamburger-bar
+          .hamburger-bar
+          .hamburger-bar
+        a.navbar-brand.mx-auto.m-md-0.order-md-1(href="#")
+          img.d-md-none(src="images/logo.png" alt="Osmo logo" width="100")
+          img.d-none.d-md-block(src="images/logo.png" alt="Osmo logo" width="154")
+        a.btn.site-nav-shop.order-md-3.text-white(href="#")
+          | Shop 
+          span.d-none.d-md-inline now
+
+        .site-nav-list-wrapper.order-md-2(data-target="navList")
+          ul.navbar-nav.site-nav-list.p-md-0
+            li.nav-item.nav-popup.mr-md-4(data-toggle="slide")
+              a.nav-link.site-nav-link.d-inline-block(href="#")
+                | Games
+                svg.site-nav-arrow.position-relative.d-md-none.align-middle(width="14" height="14" fill="white")
+                  use(xlink:href="#arrow-down")
+              ul.navbar-nav.site-nav-nested-list.d-md-none.pt-0.pl-3(data-target="slide")
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.mindracers.d-block
+                    span.d-block Hot Wheels™ MindRacers
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.codingjam.d-block
+                    span.d-block Coding Jam
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.codingawbie.d-block
+                    span.d-block Coding Awbie
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.pizzaco.d-block
+                    span.d-block Pizza Co.
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.monster.d-block
+                    span.d-block Monster
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.numbers.d-block
+                    span.d-block Numbers
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.masterpiece.d-block
+                    span.d-block Masterpiece
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.words.d-block
+                    span.d-block Words
+                li
+                  a.nav-link.site-nav-link.d-flex.align-items-center.font-weight-light(href="#")
+                    span.site-nav-game.newton.d-block
+                    span.d-block Newton
+
+            li.nav-item.mr-md-4
+              a.nav-link.site-nav-link.d-inline-block(href="#") Schools
+            li.nav-item.mr-md-4
+              a.nav-link.site-nav-link.d-inline-block(href="#") FAQ
+            li.nav-item.d-md-none
+              a.nav-link.site-nav-link.d-inline-block(href="#") Jobs
+            li.nav-item.site-nav-item-image.position-relative.d-none.d-md-inline
+              a.nav-link.site-nav-link.d-inline-block(href="#")
+                svg(width="65" height="16" fill="#717171")
+                  use(xlink:href="#logo-item")

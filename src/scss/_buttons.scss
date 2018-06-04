@@ -1,0 +1,37 @@
+.x-btn {
+  @include x-btn();
+}
+
+.x-btn-section {
+  padding: 9px 17px 8px;
+  border-radius : 30px;
+
+  svg {
+    bottom: 1px;
+    transition: fill .6s;
+  }
+}
+
+.x-btn-shop {
+  width : 202px;
+  padding-top : 20px;
+  padding-bottom : 20px;
+  transition : transform .3s ease-in-out;
+  border-radius : 30px;
+  background : linear-gradient(to right, lighten($orange,7), darken($orange,0));
+  font-size : 20px;
+
+  &:hover {
+    transform : scale(1.05);
+  }
+}
+
+.x-btn-play {
+  transition: transform .3s ease-in-out;
+  border: 3px solid white;
+  background: rgba($color: #000, $alpha: .4);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

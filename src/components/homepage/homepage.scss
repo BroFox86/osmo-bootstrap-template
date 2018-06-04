@@ -1,0 +1,450 @@
+.main-video {
+  width: 100%;
+  height: 85vw;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    height: 500px;
+  }
+
+  &-stream {
+    right: 0; 
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-btn {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.aging {
+  right: 30px;
+  bottom: -50px;
+  width: 100px;
+  height: 100px;
+  padding-top: 26px;
+  background: #e6214d;
+  z-index: 99;
+
+  @include media-breakpoint-up(md) {
+    bottom: -60px;
+    width: 120px;
+    height: 120px;
+    padding-top: 32px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: 300px;
+  }
+}
+
+.modal-close {
+  color: $gray-100;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.meet {
+  padding-bottom: 70%;
+  background: url("../images/girl-playing-table-mobile.jpg") bottom no-repeat;
+  background-size: cover;
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 20%;
+    background-image: url("../images/girl-playing-table.jpg");
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 200px;
+    background-position: right;
+    background-size: contain;
+  }
+
+  &-desc {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 270px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 500px;
+    }
+  }
+
+  &-find {
+    color: #777;
+    line-height: 1;
+
+    &:hover {
+      color: #777;
+    }
+  }
+}
+
+.touch-play {
+  overflow: hidden;
+  padding-top: 50px;
+  background: radial-gradient(circle, lighten(#2a81b9, 13), #2a81b9);
+  background-size: contain;
+
+  &-wrapper {
+    padding-bottom: 55%;
+
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 350px;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 150px;
+    }
+  }
+
+  &-tabs {
+    z-index: 3;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 50px;
+      margin-left: 350px;
+    }
+  }
+
+  &-link {
+    padding: 14px 21px 12px;
+    text-decoration: none !important;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    &:hover {
+      color: #2192cc;
+      background: white;
+    }
+
+    &:hover .touch-play-icon {
+      fill: #2192cc;
+    }
+
+    &.active {
+      border: 1px solid white;
+      border-radius: 10px;
+    }
+  }
+
+  &-par {
+    margin-bottom: 130px;
+  }
+
+  &-tab-content {
+    @include media-breakpoint-up(md) {
+      width: 320px;
+      margin-left: 350px;
+    }
+  }
+
+  &-tab-inner {
+    z-index: 3;
+  }
+
+  &-img {
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      left: 0;
+      width: 600px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 700px;
+    }
+  }
+
+  &-rays {
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 54%;
+    animation: shimmer-tablet 1s infinite alternate;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    @include media-breakpoint-up(sm) {
+      left: 0;
+      width: 600px;
+      height: 400px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 700px;
+      height: 500px;
+    }
+  }
+
+  &-rays.iphone {
+    animation: shimmer-mobile 1.5s infinite alternate;
+
+    @extend .touch-play-rays;
+  }
+}
+
+@keyframes shimmer-tablet {
+  0% {
+    background-image: url("../images/touch-play-ipad-ray-1.png");
+  }
+
+  100% {
+    background-image: url("../images/touch-play-ipad-ray-2.png");
+  }
+}
+
+
+@keyframes shimmer-mobile {
+  0% {
+    background-image: url("../images/touch-play-iphone-ray-1.png");
+  }
+
+  100% {
+    background-image: url("../images/touch-play-iphone-ray-2.png");
+  }
+}
+
+.coding {
+  font-size: $font-size-sm;
+
+  &-video {
+    width: 100%;
+    height: 307px;
+    object-fit: contain;
+
+    @include media-breakpoint-up(md) {
+      height: auto;
+    }
+  }
+
+  &-icon {
+    width: 40px;
+    height: 40px;
+
+    @include media-breakpoint-up(lg) {
+      width: 58px;
+      height: 58px;
+    }
+  }
+
+  &-icon::before {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-right: 15px;
+    content: "";
+    border-radius: 22%;
+    background-image: url("../images/game-icons.jpg");
+    background-repeat: no-repeat;
+    background-size: 475% 350%;
+  }
+
+  &-icon.mindracers::before  { background-position: $mindracers; }
+  &-icon.tangram::before     { background-position: $tangram; }
+  &-icon.pizzaco::before     { background-position: $pizzaco; }
+  &-icon.monster::before     { background-position: $monster; }
+  &-icon.numbers::before     { background-position: $numbers; }
+  &-icon.masterpiece::before { background-position: $masterpiece; }
+  &-icon.words::before       { background-position: $words; }
+  &-icon.newton::before      { background-position: $newton; }
+
+  &-par {
+    font-size: $font-size-sm;
+  }
+
+  &-img-title {
+    width: 100%;
+    max-width: 300px;
+
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+  }
+
+  &-devices {
+    font-size: $font-size-sm;
+  }
+
+  &-btn {
+    color: #22a2d1;
+    border: 1px solid #22a2d1;
+
+    &:hover {
+      color: white;
+      background: #22a2d1;
+    }
+  }
+    
+  &-btn:hover svg {
+    fill: white;
+  }
+}
+
+.awards {
+  background: #f4f7fc;
+
+  &-container {
+    @include media-breakpoint-up(xl) {
+      width: 1140px;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  &-logo {
+    display: block;
+    background: url("../images/award-logos.png") no-repeat;
+    background-size: 100px 72px;
+
+    &.toty {
+      width: 62px;
+      height: 18px;
+      background-position: 0 0;
+    }
+
+    &.good-design {
+      width: 60px;
+      height: 18px;
+      background-position: 0 -54px;
+    }
+
+    &.time-inventions {
+      width: 60px;
+      height: 18px;
+      background-position: 0 -19px;
+    }
+
+    &.most-innovative {
+      width: 99px;
+      height: 16px;
+      background-position: 0 -37px;
+    }
+  }
+
+  &-year {
+    font-size: $font-size-sm;
+  }
+}
+
+.schools {
+  background-image: radial-gradient(circle, #74c954, #4d9f30);
+
+  &-btn {
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+      color: #4d9f30;
+      background: white;
+    }
+
+    &:hover svg {
+      fill: #4d9f30;
+    }
+  }
+
+  &-video-frame {
+    position: relative;
+    width: 100%;
+    height: 267px;
+    background: url("../images/schools-video-frame.jpg") no-repeat center;
+    background-size: contain;
+
+    @include media-breakpoint-up(md) {
+      width: 702px;
+      height: 405px;
+    }
+    
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 455px;
+      height: 256px;
+    }
+  }
+
+  &-frame-btn {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.bases {
+  background: radial-gradient(circle, #be4bd5, #7d2f9f);
+  font-size: $font-size-lg;
+
+  @include media-breakpoint-up(md) {
+    font-size: 26px;
+  }
+
+  &-devices {
+    @include media-breakpoint-up(md) {
+      width: 47px;
+      height: 47px;
+    }
+  }
+
+  &-btn {
+    color: white;
+    border: 1px solid white;
+
+    &:hover {
+      color: #c24dd9;
+      background: white;
+    }
+  }
+
+  .bases-btn:hover svg {
+    fill: #c24dd9;
+  }
+}
+
+.order {
+  &-img {
+    width: 100%;
+    max-width: 400px;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 600px;
+    }
+  }
+}
+
+.conditions {
+  background: #efefef;
+
+  &-item {
+    width: 300px;
+  }
+
+  &-heading {
+    color: $gray-800;
+    font-size: $h6-font-size;
+
+    @include media-breakpoint-up(md) {
+      font-size: $h3-font-size;
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &-par {
+    font-size: $font-size-sm;
+  }
+}
