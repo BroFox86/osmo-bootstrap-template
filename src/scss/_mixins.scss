@@ -1,0 +1,28 @@
+@mixin x-center(
+  $position: absolute, 
+  $left: 0, 
+  $right: 0, 
+  $top: 0, 
+  $bottom: 0) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  margin: auto;
+}
+
+@mixin x-btn(
+  $border: border, 
+  $border-value: none, 
+  $background-color: transparent, 
+  $padding: padding, 
+  $padding-value: 0, 
+  $outline: none, 
+  $cursor: pointer) {
+  $padding: $padding-value;
+  outline: $outline;
+  #{$border}: $border-value;
+  cursor: $cursor;
+  background-color: $background-color;
+}

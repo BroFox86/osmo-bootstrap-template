@@ -1,0 +1,44 @@
+doctype html
+include /components/*/header
+
+block head
+  head
+    meta(charset="utf-8")
+    title= title
+    meta(name="author" content="Daur Gamisonia, daurgam@gmail.com, Russia | Moscow")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="robots" content="noindex")
+
+    // build:css css/styles.min.css
+    link(href="css/main.css" rel="stylesheet")
+    // endbuild 
+
+block page
+  body
+    <!--[if lte IE 10]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    // inject:svg 
+    // endinject
+
+    block header
+      +header
+
+    block content
+
+    block footer
+      include /components/*/footer
+
+    block scripts
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+
+      // build:js js/main.min.js
+      script(src="js/bootstrap.bundle.min.js")
+      script(src="js/validation.js")
+      script(src="js/scripts.js")
+      // endbuild 
+
+      // build:remove 
+      script(src="js/_viewport.js")
+      // endbuild 

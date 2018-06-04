@@ -1,0 +1,149 @@
+.site-nav {
+  background: rgba($color: #fff, $alpha: .95);
+
+  &-container {
+    @include media-breakpoint-up(md) {
+      width: 1000px;
+    }
+  }
+
+  &-shop {
+    flex-shrink: 0;
+    padding: 9px;
+    transition: transform .15s linear;
+    border-radius: 30px;
+    background: linear-gradient(to right, lighten($orange, 7) 0, darken($orange, 0) 100%);
+    font-size: 12px;
+    line-height: 20px;
+
+    @include media-breakpoint-up(md) {
+      padding: 10px 13px;
+    }
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  &-list-wrapper {
+    position: fixed;
+    z-index: 99;
+    top: 56px;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    transition: left .2s linear;
+    background: linear-gradient(230deg, $gray-900, lighten($gray-900 , 12) 100%) ;
+    font-size: 18px;
+
+    @include media-breakpoint-up(md) {
+      position: static;
+      z-index: 0;
+      width: auto;
+      height: auto;
+      background: none;
+      font-size: $font-size-sm;
+    }
+
+    &.is-visible {
+      left: 0;
+    }
+  }
+
+  &-list {
+    padding-top: 16px;
+    padding-left: 26px;
+  }
+
+  &-link {
+    color: white;
+    font-weight: 500;
+
+    @include media-breakpoint-up(md) {
+      color: lighten($gray-600, 5);
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &-item-image {
+    top: 2px;
+  }
+
+  &-arrow {
+    left: 8px;
+    transform: rotate(0);
+    transition: transform .3s;
+
+    .nav-popup.is-expanded & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-nested-list {
+    display: none;
+  }
+
+  &-game {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    border-radius: 22%;
+    background-image: url("../images/game-icons.jpg");
+    background-repeat: no-repeat;
+    background-size: 475% 350%;
+
+    &.mindracers  { background-position: $mindracers; }
+    &.codingjam   { background-position: $codingjam; }
+    &.codingawbie { background-position: $codingawbie; }
+    &.tangram     { background-position: $tangram; }
+    &.pizzaco     { background-position: $pizzaco; }
+    &.monster     { background-position: $monster; }
+    &.numbers     { background-position: $numbers; }
+    &.masterpiece { background-position: $masterpiece; }
+    &.words       { background-position: $words; }
+    &.newton      { background-position: $newton; }
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  transition: .5s ease-in-out;
+
+  &-bar {
+    width: 16px;
+    height: 2px;
+    margin-top: 3px;
+    transition: all .25s ease-in-out;
+    background-color: $gray-700;
+
+    &:nth-child(1) {
+      transform: rotate(0);
+    }
+
+    &:nth-child(2) {
+      opacity: 1;
+    }
+
+    &:nth-child(3) {
+      transform: rotate(0);
+    }
+  }
+
+  &.is-expanded .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: 5% 5%;
+  }
+
+  &.is-expanded .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.is-expanded .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+}
