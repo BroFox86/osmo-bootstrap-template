@@ -1,5 +1,5 @@
 mixin header
-  header.main-nav.position-fixed.fixed-top
+  header.main-nav.position-fixed.fixed-top.shadow-sm
     nav.navbar.navbar-expand-md.p-md-3
       .container.main-nav-container
         .hamburger.d-md-none(data-toggle="menuToggler")
@@ -15,12 +15,12 @@ mixin header
 
         .main-nav-list-wrapper.order-md-2(data-target="navList")
           ul.navbar-nav.mb-5.m-md-0.py-4.pl-4.p-md-0
-            li.nav-item.nav-popup.mr-md-4(data-toggle="navListNested")
-              a.nav-link.main-nav-link.d-inline-block(href="#")
+            li.nav-item.nav-popup.mr-md-4(data-toggle="gameList")
+              .nav-link.main-nav-link.d-inline-block
                 | Games
                 svg.main-nav-arrow.position-relative.d-md-none.align-middle(width="14" height="14" fill="white")
                   use(xlink:href="images/x-sprite.svg#arrow-down")
-              ul.navbar-nav.main-nav-nested-list.d-md-none.pt-0.pl-3(data-target="navListNested")
+              ul.navbar-nav.main-nav-nested-list.d-md-none.pt-0.pl-3(data-target="gameList")
                 li
                   a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
                     span.main-nav-game.mindracers.d-block

@@ -60,6 +60,7 @@
   &-link {
     color: white;
     font-weight: 600;
+    cursor: pointer;
 
     @include media-breakpoint-up(md) {
       color: $gray-600;
