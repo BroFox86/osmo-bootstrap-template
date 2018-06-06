@@ -5,13 +5,13 @@ prepend head
 
 block content
   .position-relative
-    .title-video
-      video.title-video-stream.position-absolute.d-block(src="videos/video.mp4", muted, autoplay, loop, playsinline)
+    .main-video
+      video.main-video-stream.d-block(src="videos/video.mp4", muted, autoplay, loop, playsinline)
         | Элемент video не поддерживается вашим браузером. 
         a(href="videos/video.mp4") Download this video
-      button.btn.x-btn-play.title-video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain")
+      button.btn.x-btn-play.main-video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain")
         svg(width="35" height="35" fill="white")
-            use(xlink:href="images/_sprite.svg#play")
+            use(xlink:href="images/x-sprite.svg#play")
     .aging.position-absolute.rounded-circle.text-center.text-white
       small.d-block For children
       span.h2.text-white 5-12
@@ -33,12 +33,12 @@ block content
         .d-flex.flex-column.flex-lg-row.align-items-center
           a.btn.x-btn-shop.mr-3.mr-sm-0.mr-lg-3.mb-3.mb-lg-0(href="#") Shop Now
             svg.align-middle.ml-2(width="17" height="17" fill="white")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
           div.meet-find
             span.mr-2 or 
             a.meet-find(href="#") Find a Store
               svg.align-middle.ml-2(width="13" height="13" fill="#666")
-                use(xlink:href="images/_sprite.svg#arrow-right")
+                use(xlink:href="images/x-sprite.svg#arrow-right")
 
   section.touch-play
     nav.container.d-flex.flex-column.align-items-center
@@ -47,12 +47,12 @@ block content
           li.nav-item.mr-4
             a.touch-play-link.active(href="#tablet" data-toggle="tab")
               svg.touch-play-icon.mr-2.align-middle(width="20" height="20" fill="white")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               span iPad
           li.nav-item
             a.touch-play-link(href="#mobile" data-toggle="tab")
               svg.touch-play-icon.mr-2.align-middle(width="20" height="20" fill="white")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               span iPhone
 
         .tab-content.touch-play-tab-content
@@ -97,15 +97,15 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#") Discover Coding Family
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
@@ -121,18 +121,18 @@ block content
           .coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
 
           .text-center
             a.btn.x-btn-section.coding-btn.m-2(href="#")
               svg.mr-1(width="12" height="12" fill="#22a2d1")
-                use(xlink:href="images/_sprite.svg#play")
+                use(xlink:href="images/x-sprite.svg#play")
               span Watch film
 
             a.btn.x-btn-section.coding-btn.m-2(href="#") Discover Hot Wheels™ MindRacers
               svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-                use(xlink:href="images/_sprite.svg#arrow-right")
+                use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
@@ -148,15 +148,15 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#") Discover Tangram
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
@@ -172,19 +172,19 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#")
               svg.mr-1(width="12" height="12" fill="#22a2d1")
-                use(xlink:href="images/_sprite.svg#play")
+                use(xlink:href="images/x-sprite.svg#play")
               span Watch film
           a.btn.x-btn-section.coding-btn.m-2(href="#") Pizza Co.
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
@@ -200,19 +200,19 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#")
               svg.mr-1(width="12" height="12" fill="#22a2d1")
-                use(xlink:href="images/_sprite.svg#play")
+                use(xlink:href="images/x-sprite.svg#play")
               span Watch film
           a.btn.x-btn-section.coding-btn.m-2(href="#") Monster
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
@@ -228,19 +228,19 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#")
               svg.mr-1(width="12" height="12" fill="#22a2d1")
-                use(xlink:href="images/_sprite.svg#play")
+                use(xlink:href="images/x-sprite.svg#play")
               span Watch film
           a.btn.x-btn-section.coding-btn.m-2(href="#") Numbers
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
@@ -256,19 +256,19 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#")
               svg.mr-1(width="12" height="12" fill="#22a2d1")
-                use(xlink:href="images/_sprite.svg#play")
+                use(xlink:href="images/x-sprite.svg#play")
               span Watch film
           a.btn.x-btn-section.coding-btn.m-2(href="#") Masterpiece
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
@@ -284,15 +284,15 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#") Discover Words
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
@@ -308,15 +308,15 @@ block content
           div.coding-devices.mb-2
             span.mr-3
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#ipad")
+                use(xlink:href="images/x-sprite.svg#ipad")
               | iPad
             span
               svg.align-middle.mr-1(width="15" height="15")
-                use(xlink:href="images/_sprite.svg#iphone")
+                use(xlink:href="images/x-sprite.svg#iphone")
               | iPhone
           a.btn.x-btn-section.coding-btn.m-2(href="#") Discover Newton
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
 
   section.awards.py-5
     .container-fluid.awards-container
@@ -351,7 +351,7 @@ block content
     .container.position-relative
       h2.text-white Schools 
         svg(fill="white" width="23" height="23")
-          use(xlink:href="images/_sprite.svg#heart")
+          use(xlink:href="images/x-sprite.svg#heart")
         |  Osmo
       p.d-md-none Osmo has been adopted in over 30,000 schools in 42 countries around the world.
       p.d-none.d-lg-block.w-50 Osmo has been adopted in over 30,000 schools in 42 countries around the world. Teachers are raving about how their students love experimenting, exploring, creating and collaborating with Osmo.
@@ -359,10 +359,10 @@ block content
       .schools-video-frame.mx-auto.mb-4
         button.btn.x-btn-play.schools-frame-btn(type="button" data-toggle="modal" data-target="#modalVideoSchools")
           svg(width="20" height="20" fill="white")
-            use(xlink:href="images/_sprite.svg#play")
+            use(xlink:href="images/x-sprite.svg#play")
       a.btn.x-btn-section.schools-btn(href="#") Osmo for schools
         svg.schools-btn-icon.position-relative.align-middle.ml-2(width="12" height="12" fill="white")
-          use(xlink:href="images/_sprite.svg#arrow-right")
+          use(xlink:href="images/x-sprite.svg#arrow-right")
 
     .modal.fade(id="modalVideoSchools")
       .modal-dialog.modal-lg.modal-dialog-centered
@@ -376,7 +376,7 @@ block content
     .container
       div.d-inline-block.mb-3.mb-md-0
         svg.bases-devices.d-inline-block.mr-2.align-middle(width="25", height="25", fill="white")
-          use(xlink:href="images/_sprite.svg#iphone-and-ipad")
+          use(xlink:href="images/x-sprite.svg#iphone-and-ipad")
         p.d-inline-block.mb-0.mr-4.align-middle.text-white
           | Works with 
           strong iPad 
@@ -384,7 +384,7 @@ block content
           strong iPhone
       a.btn.x-btn-section.bases-btn(href="#") Explore our bases
         svg.bases-btn-icon.position-relative.align-middle.ml-2(width="12" height="12" fill="white")
-          use(xlink:href="images/_sprite.svg#arrow-right")
+          use(xlink:href="images/x-sprite.svg#arrow-right")
   
   section.order.py-5.py-md-5.text-center.text-lg-left
     .container
@@ -403,20 +403,20 @@ block content
           p.mb-4 We’re creating an environment for children where the line between fun and learning is blurred. Join us.
           a.btn.x-btn-shop.mr-3.mr-sm-0.mb-sm-3.text-white(href="#") Shop Now
             svg.align-middle.ml-2(width="17" height="17" fill="white")
-              use(xlink:href="images/_sprite.svg#arrow-right")
+              use(xlink:href="images/x-sprite.svg#arrow-right")
   
   section.conditions.py-5.text-center
     .d-flex.flex-column.flex-md-row.align-items-center.align-items-md-start.justify-content-center
       .conditions-item.d-flex.flex-md-column.mb-4.mb-md-0.mx-md-4
         svg.flex-shrink-0.mr-4.mb-md-4.mx-md-auto(width="55" height="40" fill="#f78f1e")
-          use(xlink:href="images/_sprite.svg#parcel")
+          use(xlink:href="images/x-sprite.svg#parcel")
         div
           h3.conditions-heading.mb-1.mb-md-2 Free Shipping
           p.conditions-par.m-0 Free shipping to the United States for orders over $99.
 
       .conditions-item.d-flex.flex-md-column.mb-4.mb-md-0.mx-md-4
         svg.flex-shrink-0.mr-4.mb-md-3.mx-md-auto(width="55" height="50" fill="#f78f1e")
-          use(xlink:href="images/_sprite.svg#pieces")
+          use(xlink:href="images/x-sprite.svg#pieces")
         div
           h3.conditions-heading.mb-1.mb-md-2 Piece Replacement
           p.conditions-par.m-0 In most cases, if you lose a piece we will replace it for free. There is a 90-day warranty on the base. 
@@ -424,7 +424,7 @@ block content
 
       .conditions-item.d-flex.flex-md-column.mx-md-4
         svg.flex-shrink-0.mr-4.mb-md-4.mx-md-auto(width="55" height="40" fill="#f78f1e")
-          use(xlink:href="images/_sprite.svg#dollar")
+          use(xlink:href="images/x-sprite.svg#dollar")
         div
           h3.conditions-heading.mb-1.mb-md-2 Referral Program
           p.conditions-par.m-0 Refer Osmo to your family and friends and get cash back for every purchase.
