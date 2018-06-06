@@ -1,5 +1,5 @@
 doctype html
-include /components/*/header
+include /pug/mixins
 
 block head
   head
@@ -19,10 +19,8 @@ block page
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-    // inject:svg 
-    // endinject
-
     block header
+      include /components/*/header
       +header
 
     block content
@@ -35,7 +33,9 @@ block page
 
       // build:js js/main.min.js
       script(src="js/bootstrap.bundle.min.js")
-      script(src="js/validation.js")
+      script(src="js/svg4everybody.js")
+      script.
+        svg4everybody();
       script(src="js/scripts.js")
       // endbuild 
 

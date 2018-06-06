@@ -1,4 +1,8 @@
-.site-nav {
+// ==========================================================================
+// Main navigation
+// ==========================================================================
+
+.main-nav {
   background: rgba($color: #fff, $alpha: .95);
 
   &-container {
@@ -14,6 +18,7 @@
     border-radius: 30px;
     background: linear-gradient(to right, lighten($orange, 7) 0, darken($orange, 0) 100%);
     font-size: 12px;
+    font-weight: 600;
     line-height: 20px;
 
     @include media-breakpoint-up(md) {
@@ -30,6 +35,7 @@
     z-index: 99;
     top: 56px;
     left: -260px;
+    overflow-y: auto;
     width: 260px;
     height: 100%;
     transition: left .2s linear;
@@ -39,6 +45,7 @@
     @include media-breakpoint-up(md) {
       position: static;
       z-index: 0;
+      overflow: hidden;
       width: auto;
       height: auto;
       background: none;
@@ -50,17 +57,13 @@
     }
   }
 
-  &-list {
-    padding-top: 16px;
-    padding-left: 26px;
-  }
-
   &-link {
     color: white;
     font-weight: 600;
 
     @include media-breakpoint-up(md) {
       color: $gray-600;
+      fill: $gray-600;
     }
 
     &:hover {
@@ -68,6 +71,7 @@
 
       @include media-breakpoint-up(md) {
         color: $gray-900;
+        fill: $gray-900;
       }
     }
   }
@@ -78,8 +82,8 @@
 
   &-arrow {
     left: 8px;
-    transform: rotate(0);
     transition: transform .3s;
+    transform: rotate(0);
 
     .nav-popup.is-expanded & {
       transform: rotate(180deg);
@@ -100,18 +104,22 @@
     background-repeat: no-repeat;
     background-size: 475% 350%;
 
-    &.mindracers  { background-position: $mindracers; }
-    &.codingjam   { background-position: $codingjam; }
+    &.mindracers { background-position: $mindracers; }
+    &.codingjam { background-position: $codingjam; }
     &.codingawbie { background-position: $codingawbie; }
-    &.tangram     { background-position: $tangram; }
-    &.pizzaco     { background-position: $pizzaco; }
-    &.monster     { background-position: $monster; }
-    &.numbers     { background-position: $numbers; }
+    &.tangram { background-position: $tangram; }
+    &.pizzaco { background-position: $pizzaco; }
+    &.monster { background-position: $monster; }
+    &.numbers { background-position: $numbers; }
     &.masterpiece { background-position: $masterpiece; }
-    &.words       { background-position: $words; }
-    &.newton      { background-position: $newton; }
+    &.words { background-position: $words; }
+    &.newton { background-position: $newton; }
   }
 }
+
+// ==========================================================================
+// Hamburger menu button
+// ==========================================================================
 
 .hamburger {
   cursor: pointer;
