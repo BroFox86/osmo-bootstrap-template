@@ -1,16 +1,18 @@
-.main-video {
+// ==========================================================================
+// Title video
+// ==========================================================================
+
+.title-video {
+  overflow: hidden;
   width: 100%;
   height: 85vw;
-  overflow: hidden;
 
   @include media-breakpoint-up(sm) {
     height: 500px;
   }
 
   &-stream {
-    right: 0; 
-    bottom: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -21,14 +23,18 @@
   }
 }
 
+// ==========================================================================
+// Age category
+// ==========================================================================
+
 .aging {
+  z-index: 99;
   right: 30px;
   bottom: -50px;
   width: 100px;
   height: 100px;
   padding-top: 26px;
   background: #e6214d;
-  z-index: 99;
 
   @include media-breakpoint-up(md) {
     bottom: -60px;
@@ -42,28 +48,36 @@
   }
 }
 
-.modal-close {
-  color: $gray-100;
-
-  &:hover {
-    color: white;
-  }
-}
+// ==========================================================================
+// Meet Osmo
+// ==========================================================================
 
 .meet {
+  padding-top: 40px;
   padding-bottom: 70%;
-  background: url("../images/girl-playing-table-mobile.jpg") bottom no-repeat;
-  background-size: cover;
+  background: url("../images/girl-playing-table.jpg") bottom no-repeat;
+  background-size: contain;
 
   @include media-breakpoint-up(sm) {
+    padding-top: 60px;
     padding-bottom: 20%;
-    background-image: url("../images/girl-playing-table.jpg");
+    background-image: url("../images/girl-playing-table-wide-responsive.jpg");
+    background-size: cover;
   }
 
   @include media-breakpoint-up(lg) {
+    padding-top: 120px;
     padding-bottom: 200px;
     background-position: right;
-    background-size: contain;
+    background-size: auto 100%;
+  }
+
+  @media (min-width: $sm) and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $sm) {
+    background-image: url("../images/girl-playing-table-wide@1.5x.jpg");
+  }
+
+  @media (min-width: $sm) and (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) and (min-width: $sm) {
+    background-image: url("../images/girl-playing-table-wide@2x.jpg");
   }
 
   &-desc {
@@ -74,7 +88,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-      width: 500px;
+      width: 400px;
     }
   }
 
@@ -87,6 +101,10 @@
     }
   }
 }
+
+// ==========================================================================
+// Nav-tabs: Play with your hands
+// ==========================================================================
 
 .touch-play {
   overflow: hidden;
@@ -107,7 +125,7 @@
   }
 
   &-tabs {
-    z-index: 3;
+    z-index: 4;
 
     @include media-breakpoint-up(md) {
       margin-top: 50px;
@@ -149,7 +167,7 @@
   }
 
   &-tab-inner {
-    z-index: 3;
+    z-index: 4;
   }
 
   &-img {
@@ -167,15 +185,16 @@
     }
   }
 
-  &-rays {
+  &-overlay {
     z-index: 2;
     bottom: 0;
     width: 100%;
-    height: 54%;
-    animation: shimmer-tablet 1s infinite alternate;
+    height: 60vw;
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 
     @include media-breakpoint-up(sm) {
       left: 0;
@@ -189,33 +208,58 @@
     }
   }
 
-  &-rays.iphone {
-    animation: shimmer-mobile 1.5s infinite alternate;
+  &-overlay.ipad {
+    animation-name: shimmer-ipad;
+    animation-duration: 1.5s;
+  }
 
-    @extend .touch-play-rays;
+  &-overlay.iphone {
+    animation-name: shimmer-iphone;
+    animation-duration: 1.5s;
+  }
+
+  &-overlay.hand {
+    z-index: 3;
+    animation-name: shimmer-hand;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    background-image: url("../images/hand-overlay.png");
   }
 }
 
-@keyframes shimmer-tablet {
-  0% {
-    background-image: url("../images/touch-play-ipad-ray-1.png");
+@keyframes shimmer-ipad {
+  from {
+    background-image: url("../images/ipad-rays-first.png");
   }
 
-  100% {
-    background-image: url("../images/touch-play-ipad-ray-2.png");
+  to {
+    background-image: url("../images/ipad-rays-second.png");
+  }
+}
+
+@keyframes shimmer-iphone {
+  from {
+    background-image: url("../images/iphone-rays-first.png");
+  }
+
+  to {
+    background-image: url("../images/iphone-rays-second.png");
   }
 }
 
-
-@keyframes shimmer-mobile {
-  0% {
-    background-image: url("../images/touch-play-iphone-ray-1.png");
+@keyframes shimmer-hand {
+  from {
+    opacity: 0;
   }
 
-  100% {
-    background-image: url("../images/touch-play-iphone-ray-2.png");
+  to {
+    opacity: 1;
   }
 }
+
+// ==========================================================================
+// Coding family
+// ==========================================================================
 
 .coding {
   font-size: $font-size-sm;
@@ -252,14 +296,14 @@
     background-size: 475% 350%;
   }
 
-  &-icon.mindracers::before  { background-position: $mindracers; }
-  &-icon.tangram::before     { background-position: $tangram; }
-  &-icon.pizzaco::before     { background-position: $pizzaco; }
-  &-icon.monster::before     { background-position: $monster; }
-  &-icon.numbers::before     { background-position: $numbers; }
+  &-icon.mindracers::before { background-position: $mindracers; }
+  &-icon.tangram::before { background-position: $tangram; }
+  &-icon.pizzaco::before { background-position: $pizzaco; }
+  &-icon.monster::before { background-position: $monster; }
+  &-icon.numbers::before { background-position: $numbers; }
   &-icon.masterpiece::before { background-position: $masterpiece; }
-  &-icon.words::before       { background-position: $words; }
-  &-icon.newton::before      { background-position: $newton; }
+  &-icon.words::before { background-position: $words; }
+  &-icon.newton::before { background-position: $newton; }
 
   &-par {
     font-size: $font-size-sm;
@@ -287,11 +331,15 @@
       background: #22a2d1;
     }
   }
-    
+
   &-btn:hover svg {
     fill: white;
   }
 }
+
+// ==========================================================================
+// Award-Winning
+// ==========================================================================
 
 .awards {
   background: #f4f7fc;
@@ -342,12 +390,16 @@
   }
 }
 
+// ==========================================================================
+// Schools ♥ Osmo
+// ==========================================================================
+
 .schools {
   background-image: radial-gradient(circle, #74c954, #4d9f30);
 
   &-btn {
-    border: 1px solid white;
     color: white;
+    border: 1px solid white;
 
     &:hover {
       color: #4d9f30;
@@ -386,6 +438,10 @@
   }
 }
 
+// ==========================================================================
+// Works with
+// ==========================================================================
+
 .bases {
   background: radial-gradient(circle, #be4bd5, #7d2f9f);
   font-size: $font-size-lg;
@@ -416,6 +472,10 @@
   }
 }
 
+// ==========================================================================
+// Order Osmo
+// ==========================================================================
+
 .order {
   &-img {
     width: 100%;
@@ -427,11 +487,23 @@
   }
 }
 
+// ==========================================================================
+// Shopping conditions
+// ==========================================================================
+
 .conditions {
   background: #efefef;
 
   &-item {
-    width: 300px;
+    width: 330px;
+    
+    @include media-breakpoint-up(md) {
+      width: 230px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 330px;
+    }
   }
 
   &-heading {
