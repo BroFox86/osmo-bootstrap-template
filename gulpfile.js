@@ -238,7 +238,7 @@ gulp.task("styles:build", function() {
 
 gulp.task("images:minify", function() {
   return gulp
-    .src(["[^_]*/**", "[^x-]*"], { cwd: paths.src.images })
+    .src(["./!(*-responsive*|x-*|_*)", "./[^_]*/**/!(*-responsive*)"], { cwd: paths.src.images })
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )
