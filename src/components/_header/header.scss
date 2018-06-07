@@ -20,13 +20,20 @@
     font-size: 12px;
     font-weight: 600;
     line-height: 20px;
+    transform: translate(200px);
+    transition: transform .3s ease-out;
 
     @include media-breakpoint-up(md) {
       padding: 10px 13px;
+      transform: none;
     }
 
     &:hover {
       transform: scale(1.07);
+    }
+
+    &.is-visible {
+      transform: translate(0);
     }
   }
 
