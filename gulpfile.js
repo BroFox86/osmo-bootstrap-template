@@ -238,7 +238,7 @@ gulp.task("styles:build", function() {
 
 gulp.task("images:minify", function() {
   return gulp
-    .src(["./!(*-responsive*|x-*|_*)", "./[^_]*/**/!(*-responsive*)"], { cwd: paths.src.images })
+    .src(["./!(*-responsive*|_*|sprite.svg)", "./[^_]*/**/!(*-responsive*)"], { cwd: paths.src.images })
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )
@@ -349,7 +349,7 @@ gulp.task("images:sprites:svg", function() {
         parserOptions: { xmlMode: true }
       })
     )
-    .pipe(rename("x-sprite.svg"))
+    .pipe(rename("sprite.svg"))
     .pipe(gulp.dest(paths.tmp.images))
     .pipe(browserSync.stream());
 });
