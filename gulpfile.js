@@ -315,6 +315,17 @@ gulp.task("images:responsive", function() {
               width: 960 * 2,
               rename: { suffix: huge }
             }
+          ],
+          "**/game-icons*": [
+            { width: 480 },
+            {
+              width: 480 * 1.5,
+              rename: { suffix: large }
+            },
+            {
+              width: 480 * 2,
+              rename: { suffix: huge }
+            }
           ]
         },
         respOptions
@@ -556,7 +567,7 @@ gulp.task("prebuild", function(callback) {
 
 gulp.task("build", function(callback) {
   gulpSequence(
-    ["clean:all"],
+    // ["clean:all"],
     ["prebuild"],
     ["html:build"],
     [

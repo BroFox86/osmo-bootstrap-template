@@ -58,6 +58,14 @@
   background: url("../images/girl-playing-table.jpg") bottom no-repeat;
   background-size: contain;
 
+  @media (min-width: $sm) and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $sm) {
+    background-image: url("../images/girl-playing-table-wide@1.5x.jpg");
+  }
+
+  @media (min-width: $sm) and (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) and (min-width: $sm) {
+    background-image: url("../images/girl-playing-table-wide@2x.jpg");
+  }
+
   @include media-breakpoint-up(sm) {
     padding-top: 60px;
     padding-bottom: 20%;
@@ -72,13 +80,7 @@
     background-size: auto 100%;
   }
 
-  @media (min-width: $sm) and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $sm) {
-    background-image: url("../images/girl-playing-table-wide@1.5x.jpg");
-  }
-
-  @media (min-width: $sm) and (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) and (min-width: $sm) {
-    background-image: url("../images/girl-playing-table-wide@2x.jpg");
-  }
+  
 
   &-desc {
     width: 100%;
@@ -288,9 +290,17 @@
     margin-right: 15px;
     content: "";
     border-radius: 22%;
-    background-image: url("../images/game-icons.jpg");
+    background-image: url("../images/game-icons-responsive.jpg");
     background-repeat: no-repeat;
     background-size: 475% 350%;
+
+    @media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
+      background-image: url("../images/game-icons-responsive@1.5x.jpg");
+    }
+
+    @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url("../images/game-icons-responsive@2x.jpg");
+    }
   }
 
   &-icon.mindracers::before { background-position: $mindracers; }
@@ -412,7 +422,7 @@
     position: relative;
     width: 100%;
     height: 267px;
-    background: url("../images/schools-video-frame.jpg") no-repeat center;
+    background: url("../images/schools.jpg") no-repeat center;
     background-size: contain;
 
     @include media-breakpoint-up(md) {

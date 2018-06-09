@@ -1,14 +1,16 @@
 extends /pug/layout
 
 prepend head
-  - var title = "Osmo template"
+  - var title = "Osmo bootstrap template"
 
 block content
   .position-relative
     .main-video
-      video.main-video-stream.d-block(src="videos/video.mp4", muted, autoplay, loop, playsinline)
+      video.main-video-stream.d-block(poster="images/main-video.jpg", autoplay, muted, loop, playsinline)
+        source(src="videos/main-video.webm", type="video/webm")
+        source(src="videos/main-video.mp4", type="video/mp4")
         | Элемент video не поддерживается вашим браузером. 
-        a(href="videos/video.mp4") Download this video
+        a(href="videos/main-video.mp4") Download this video
       button.btn.x-btn-play.main-video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain")
         svg(width="35" height="35" fill="white")
             use(xlink:href="images/sprite.svg#play")
@@ -31,7 +33,7 @@ block content
 
       .d-flex.mr-auto
         .d-flex.flex-column.flex-lg-row.align-items-center
-          a.btn.x-btn-shop.mr-3.mr-sm-0.mr-lg-3.mb-3.mb-lg-0(href="#") Shop Now
+          a.btn.x-btn-shop.mr-sm-0.mr-lg-3.mb-3.mb-lg-0(href="#") Shop Now
             svg.align-middle.ml-2(width="17" height="17" fill="white")
               use(xlink:href="images/sprite.svg#arrow-right")
           div.meet-find
@@ -83,11 +85,13 @@ block content
             .touch-play-overlay.iphone.position-absolute
             .touch-play-overlay.hand.position-absolute
 
-  section.coding.py-5
+  section.coding.py-4.py-md-5
     .container
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
-          video.coding-video.d-block(src="videos/coding-awbie.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/coding-awbie.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/coding-awbie.webm", type="video/webm")
+            source(src="videos/coding-awbie.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/coding-awbie.mp4") Download this video
 
@@ -109,7 +113,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
-          video.coding-video.d-block(src="videos/mindracers.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/mindracers.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/mindracers.webm", type="video/webm")
+            source(src="videos/mindracers.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/mindracers.mp4") Download this video
 
@@ -136,7 +142,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
-          video.coding-video.d-block(src="videos/tangram.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/tangram.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/tangram.mp4", type="video/mp4")
+            source(src="videos/tangram.webm", type="video/webm")
             | Video tag is not supported by your browser.
             a(href="videos/tangram.mp4") Download this video
 
@@ -160,7 +168,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
-          video.coding-video.d-block(src="videos/pizza-and-co.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/pizza-and-co.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/pizza-and-co.webm", type="video/webm")
+            source(src="videos/pizza-and-co.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/pizza-and-co.mp4") Download this video
 
@@ -188,7 +198,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
-          video.coding-video.d-block(src="videos/monster.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/monster.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/monster.webm", type="video/webm")
+            source(src="videos/monster.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/monster.mp4") Download this video
 
@@ -216,7 +228,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
-          video.coding-video.d-block(src="videos/numbers.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/numbers.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/numbers.webm", type="video/webm")
+            source(src="videos/numbers.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/numbers.mp4") Download this video
 
@@ -244,7 +258,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5.order-md-2
-          video.coding-video.d-block(src="videos/masterpiece.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/masterpiece.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/masterpiece.webm", type="video/webm")
+            source(src="videos/masterpiece.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/masterpiece.mp4") Download this video
 
@@ -272,7 +288,9 @@ block content
 
       .row.align-items-md-center.justify-content-lg-center.mb-4
         .col-12.col-md-5
-          video.coding-video.d-block(src="videos/words.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/words.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/words.webm", type="video/webm")
+            source(src="videos/words.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/words.mp4") Download this video
 
@@ -294,9 +312,11 @@ block content
             svg.coding-btn-icon.position-relative.ml-2.align-middle(width="12" height="12" fill="#22a2d1")
               use(xlink:href="images/sprite.svg#arrow-right")
 
-      .row.align-items-md-center.justify-content-lg-center.mb-4
+      .row.align-items-md-center.justify-content-lg-center
         .col-12.col-md-5.order-md-2
-          video.coding-video.d-block(src="videos/newton.mp4", preload, loop, muted, playsinline)
+          video.coding-video.d-block(poster="images/newton.jpg", data-toggle="autoplay", preload="none", loop, muted, playsinline)
+            source(src="videos/newton.webm", type="video/webm")
+            source(src="videos/newton.mp4", type="video/mp4")
             | Video tag is not supported by your browser.
             a(href="videos/newton.mp4") Download this video
 

@@ -3,7 +3,7 @@ $("[data-toggle='menuToggler']").click(function() {
   $("[data-target='navList']").toggleClass("is-visible");
 });
 
-$("[data-toggle='gameList']").click(function() {
+$("[data-toggle='nestedList']").click(function() {
   $(this).toggleClass("is-expanded");
-  $("[data-target='gameList']").slideToggle(400);
+  $("[data-target='nestedList']").slideToggle(400);
 });
