@@ -132,6 +132,13 @@ gulp.task("html:generate", function() {
         plugins: [pugIncludeGlob()]
       })
     )
+    .pipe(
+      inject(gulp.src(paths.tmp.root + "sprite.svg"), {
+        transform: function (filePath, file) {
+          return file.contents.toString('utf8')
+        }
+      })
+    )
     .pipe(replace("../images/", "images/"))
     .pipe(htmlbeautify({ indent_size: 2 }))
     .pipe(gulp.dest(paths.tmp.root));
@@ -238,7 +245,7 @@ gulp.task("styles:build", function() {
 
 gulp.task("images:minify", function() {
   return gulp
-    .src(["./!(*-responsive*|_*|sprite.svg)", "./[^_]*/**/!(*-responsive*)"], { cwd: paths.src.images })
+    .src(["./!(*-responsive*|_*)", "./[^_]*/**/!(*-responsive*)"], { cwd: paths.src.images })
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )
@@ -361,7 +368,7 @@ gulp.task("images:sprites:svg", function() {
       })
     )
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest(paths.tmp.images))
+    .pipe(gulp.dest(paths.tmp.root))
     .pipe(browserSync.stream());
 });
 

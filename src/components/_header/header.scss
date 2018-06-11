@@ -21,7 +21,7 @@
     font-weight: 600;
     line-height: 20px;
     transform: translate(200px);
-    transition: transform .3s ease-out;
+    transition: transform .5s ease-out;
 
     @include media-breakpoint-up(md) {
       padding: 10px 13px;
