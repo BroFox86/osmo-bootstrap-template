@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Play the video intro at page load.
+   Play the video intro after the page is completely loaded
    ========================================================================== */
 
 $(window).on("load", function() {
@@ -7,8 +7,16 @@ $(window).on("load", function() {
 });
 
 /* ==========================================================================
-   Play/pause videos depending on their position on a screen.
+   Preload videos after the page is completely loaded
    ========================================================================== */
+
+$(window).on("load", function() {
+  $("[data-toggle='autoplayControl']").attr("preload", "preload");
+});
+
+/* ==========================================================================
+     Play/pause videos depending on their position on a screen
+     ========================================================================== */
 
 function isInVisibleRange(element) {
   "use strict";

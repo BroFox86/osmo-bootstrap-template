@@ -10,7 +10,6 @@ var // Common
   cache = require("gulp-cache"),
   browserSync = require("browser-sync"),
   del = require("del"),
-  fs = require("fs"),
   concat = require("gulp-concat"),
   rename = require("gulp-rename"),
   replace = require("gulp-replace"),
@@ -20,9 +19,7 @@ var // Common
   gulpSequence = require("gulp-sequence"),
   flatten = require("gulp-flatten"),
   run = require("gulp-run"),
-  path = require("path"),
   inject = require("gulp-inject"),
-  injectString = require("gulp-inject-string"),
   // HTML
   pug = require("gulp-pug"),
   pugIncludeGlob = require("pug-include-glob"),
@@ -40,14 +37,12 @@ var // Common
   mqpacker = require("css-mqpacker"),
   pxtorem = require("postcss-pxtorem"),
   uncss = require("uncss").postcssPlugin,
-  penthouse = require("penthouse"),
   // JS
   uglify = require("gulp-uglify"),
   // Images
   imagemin = require("gulp-imagemin"),
   imageminSvgo = require("imagemin-svgo"),
   imageminJpegRecompress = require("imagemin-jpeg-recompress"),
-  imageDataURI = require("gulp-image-data-uri"),
   responsive = require("gulp-responsive"),
   unusedImages = require("gulp-unused-images");
 
@@ -87,8 +82,10 @@ var paths = {
   },
   plugins: {
     js: [
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "node_modules/svg4everybody/dist/svg4everybody.js"
+      "node_modules/bootstrap/js/dist/index.js",
+      "node_modules/bootstrap/js/dist/util.js",
+      "node_modules/bootstrap/js/dist/modal.js",
+      "node_modules/bootstrap/js/dist/tab.js"
     ]
   }
 };
@@ -324,13 +321,13 @@ gulp.task("images:responsive", function() {
             }
           ],
           "**/game-icons*": [
-            { width: 480 },
+            { width: 600 },
             {
-              width: 480 * 1.5,
+              width: 600 * 1.5,
               rename: { suffix: large }
             },
             {
-              width: 480 * 2,
+              width: 600 * 2,
               rename: { suffix: huge }
             }
           ]
@@ -566,9 +563,9 @@ gulp.task("connect:dist", function() {
 
 gulp.task("prebuild", function(callback) {
   gulpSequence(
+    ["images:prebuild", "videos:prebuild", "js:prebuild", "fonts:prebuild"],
     ["html:generate"],
-    ["styles:prebuild"],
-    ["images:prebuild", "videos:prebuild", "js:prebuild", "fonts:prebuild"]
+    ["styles:prebuild"]
   )(callback);
 });
 

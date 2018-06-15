@@ -14,49 +14,57 @@ mixin header
           span.d-none.d-md-inline now
 
         .main-nav-list-wrapper.order-md-2(data-target="navList")
-          ul.navbar-nav.mb-5.m-md-0.py-4.pl-4.p-md-0
-            li.nav-item.nav-popup.mr-md-4(data-toggle="nestedList")
-              .nav-link.main-nav-link.d-inline-block
+          ul.navbar-nav.mb-5.py-4.pl-4.m-md-0.p-md-0
+            li.nav-item.main-nav-popup-item.mr-md-4(data-toggle="nestedList")
+              .nav-link.main-nav-link.position-relative.d-inline-block
                 | Games
-                svg.main-nav-arrow.position-relative.d-md-none.align-middle(width="14" height="14" fill="white")
-                  use(xlink:href="#arrow-down")
-              ul.navbar-nav.main-nav-nested-list.d-md-none.pt-0.pl-3(data-target="nestedList")
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.mindracers.d-block
-                    span.d-block Hot Wheels™ MindRacers
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.codingjam.d-block
-                    span.d-block Coding Jam
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.codingawbie.d-block
-                    span.d-block Coding Awbie
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.pizzaco.d-block
-                    span.d-block Pizza Co.
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.monster.d-block
-                    span.d-block Monster
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.numbers.d-block
-                    span.d-block Numbers
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.masterpiece.d-block
-                    span.d-block Masterpiece
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.words.d-block
-                    span.d-block Words
-                li
-                  a.nav-link.main-nav-link.d-flex.align-items-center.font-weight-light(href="#")
-                    span.main-nav-game.newton.d-block
-                    span.d-block Newton
+                .main-nav-arrow-wrapper.d-inline-block.ml-2.ml-md-0
+                  svg.main-nav-arrow.align-middle(width="14" height="14")
+                    use(xlink:href="#arrow-down")
+              .main-nav-nested-list-wrapper(data-target="nestedList")
+                ul.navbar-nav.main-nav-nested-list.position-relative.flex-md-row.justify-content-around.justify-content-lg-center.pt-0.pl-3.p-md-0
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.mindracers.d-block.mb-md-3
+                      span.d-block Hot Wheels™ 
+                        br.d-none.d-md-block 
+                        | MindRacers
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.codingjam.d-block.mb-md-3
+                      span.d-block Coding 
+                        br.d-none.d-md-block 
+                        | Jam
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.codingawbie.d-block.mb-md-3
+                      span.d-block Coding 
+                        br.d-none.d-md-block 
+                        | Awbie
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.pizzaco.d-block.mb-md-3
+                      span.d-block Pizza Co.
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.monster.d-block.mb-md-3
+                      span.d-block Monster
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.numbers.d-block.mb-md-3
+                      span.d-block Numbers
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.masterpiece.d-block.mb-md-3
+                      span.d-block Masterpiece
+                  li.mr-lg-5
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.words.d-block.mb-md-3
+                      span.d-block Words
+                  li
+                    a.nav-link.main-nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.main-nav-game.newton.d-block.mb-md-3
+                      span.d-block Newton
 
             li.nav-item.mr-md-4
               a.nav-link.main-nav-link.d-inline-block(href="#") Schools

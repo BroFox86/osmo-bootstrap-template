@@ -1,12 +1,11 @@
 // ==========================================================================
 // Update Bootstrap variables
 // ==========================================================================
-$font-family-base: "Montserrat", sans-serif;
-$font-family-system: -apple-system, sans-serif;
-
 $body-color: $gray-700;
-$link-color: #337ab7;
+$link-color: $cyan;
 
+$font-family-base: "Montserrat", sans-serif;
+$font-family-system: $font-family-sans-serif;
 $font-weight-base: 300;
 
 $headings-color: #373737;
@@ -14,7 +13,7 @@ $headings-margin-bottom: 15px;
 $headings-font-weight: 600;
 
 // ==========================================================================
-// Project variables
+// Custom variables
 // ==========================================================================
 
 // Media breakpoints
@@ -25,7 +24,7 @@ $md: 768px;
 $lg: 992px;
 $xs: 1200px;
 
-// Icons sprite positions
+// Icon positions in the sprite image
 // ==========================================================================
 
 $mindracers:    33.33333333% 100%;

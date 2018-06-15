@@ -37,10 +37,16 @@
     }
   }
 
+  &-nested-list {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 50px;
+    }
+  }
+
   &-list-wrapper {
     position: fixed;
     z-index: 99;
-    top: 56px;
+    top: 57px;
     left: -260px;
     overflow-y: auto;
     width: 260px;
@@ -52,7 +58,7 @@
     @include media-breakpoint-up(md) {
       position: static;
       z-index: 0;
-      overflow: hidden;
+      overflow: visible;
       width: auto;
       height: auto;
       background: none;
@@ -82,24 +88,67 @@
         fill: $gray-900;
       }
     }
+
+    .main-nav-popup-item:hover > & {
+      @include media-breakpoint-up(md) {
+        color: $cyan;
+      }
+    }
+    
+    .main-nav-nested-list-wrapper & {
+      color: white;
+    }
   }
 
   &-item-image {
     top: 2px;
   }
 
-  &-arrow {
-    left: 8px;
-    transition: transform .3s;
-    transform: rotate(0);
-
-    .nav-popup.is-expanded & {
-      transform: rotate(180deg);
+  &-arrow-wrapper {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 40px;
+      width: 40px;
     }
   }
 
-  &-nested-list {
+  &-arrow {
+    fill: white;
+    transition: transform .3s;
+    transform: rotate(0);
+
+    @include media-breakpoint-up(md) {
+      fill: $cyan;
+      transform: scale(0);
+
+      @include x-center();
+    }
+
+    .main-nav-popup-item.is-expanded & {
+      transform: rotate(180deg);
+    }
+
+    .main-nav-popup-item:hover & {
+      @include media-breakpoint-up(md) {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &-nested-list-wrapper {
     display: none;
+    
+    @include media-breakpoint-up(md) {
+      position: fixed;
+      top: 85px;
+      left: 0;
+      width: 100%;
+      background-image: radial-gradient(circle, #3BB6D4, #329BC8);
+    }
   }
 
   &-game {
@@ -111,6 +160,11 @@
     background-image: url("../images/game-icons-responsive.jpg");
     background-repeat: no-repeat;
     background-size: 475% 350%;
+    transition: transform .2s ease-out;
+
+    &:hover {
+      transform: scale(1.07);
+    }
 
     @media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
       background-image: url("../images/game-icons-responsive@1.5x.jpg");
@@ -118,6 +172,22 @@
 
     @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
       background-image: url("../images/game-icons-responsive@2x.jpg");
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 36px * 1.1;
+      height: 36px * 1.1;
+      margin-right: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 36px * 1.4;
+      height: 36px * 1.4;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 36px * 2.3;
+      height: 36px * 2.3;
     }
 
     &.mindracers { background-position: $mindracers; }

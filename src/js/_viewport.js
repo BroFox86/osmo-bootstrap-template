@@ -27,7 +27,7 @@ function displayViewportSize() {
     position: "fixed",
     bottom: "0",
     left: "1%",
-    "z-index": "999",
+    "z-index": "9999",
     color: "blue"
   });
 }
