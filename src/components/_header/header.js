@@ -8,7 +8,7 @@ $("[data-toggle='menuToggler']").click(function() {
 });
 
 /* ==========================================================================
-   Nested list toggler
+   Nested list togglers
    ========================================================================== */
 
 handleNestedList("[data-toggle='nestedList']", "[data-target='nestedList']");

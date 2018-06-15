@@ -138,6 +138,15 @@ gulp.task("html:generate", function() {
     )
     .pipe(replace("../images/", "images/"))
     .pipe(htmlbeautify({ indent_size: 2 }))
+    .pipe(
+      rename(function(path) {
+        if (path.basename == "homepage") {
+          path.basename = "index";
+          path.extname = ".html";
+        }
+        return path;
+      })
+    )
     .pipe(gulp.dest(paths.tmp.root));
 });
 

@@ -15,8 +15,8 @@ $(window).on("load", function() {
 });
 
 /* ==========================================================================
-     Play/pause videos depending on their position on a screen
-     ========================================================================== */
+   Play/pause videos depending on their position on a screen
+   ========================================================================== */
 
 function isInVisibleRange(element) {
   "use strict";
