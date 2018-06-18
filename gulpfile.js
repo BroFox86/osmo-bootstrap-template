@@ -236,7 +236,7 @@ gulp.task("styles:build", function() {
       postcss([
         uncss({
           html: [paths.dist.root + "[^google]*.html"],
-          ignore: [/.*[is,has]-.*/],
+          ignore: [/.*[is,has]-.*/, /.*modal.*/],
           ignoreSheets: [/fonts.googleapis/]
         })
       ])

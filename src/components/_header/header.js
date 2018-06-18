@@ -1,4 +1,16 @@
 /* ==========================================================================
+   Show the Shop button after DOM is loaded
+   ========================================================================== */
+
+   $(window).on("DOMContentLoaded resize", function() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      setTimeout(function() {
+        $(".main-nav-shop").addClass("is-visible");
+      }, 500);
+    }
+  });
+
+/* ==========================================================================
    Mobile menu toggler
    ========================================================================== */
 
@@ -15,7 +27,7 @@ handleNestedList("[data-toggle='nestedList']", "[data-target='nestedList']");
 
 function handleNestedList(toggle, target) {
   var $body = $("body"),
-      duration = 500;
+      duration = 400;
 
   function click() {
     $(target).css("height", "auto");
@@ -62,15 +74,3 @@ function handleNestedList(toggle, target) {
     }
   });
 };
-
-/* ==========================================================================
-   Show Shop button on DOM load
-   ========================================================================== */
-
-$(window).on("DOMContentLoaded resize", function() {
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    setTimeout(function() {
-      $(".main-nav-shop").addClass("is-visible");
-    }, 500);
-  }
-});

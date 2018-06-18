@@ -11,7 +11,7 @@ $(window).on("load", function() {
    ========================================================================== */
 
 $(window).on("load", function() {
-  $("[data-toggle='autoplayControl']").attr("preload", "preload");
+  $("[data-toggle='autoplayControl']").attr("preload", "metadata");
 });
 
 /* ==========================================================================
