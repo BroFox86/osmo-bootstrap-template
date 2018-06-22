@@ -27,6 +27,16 @@ block content
             iframe.embed-responsive-item(src="https://www.youtube.com/embed/1JoIqEGuSlk?rel=0" allowfullscreen)
 
   section.meet
+
+    //- picture
+    //-   source(src="images/images/girl-playing-table.jpg")
+
+    //-   source(media="(min-width: 576px)" src="images/images/girl-playing-table-wide-responsive.jpg")
+
+    //-   source(media="(min-width: 576px)", src="images/images/girl-playing-table-wide-responsive@1.5x.jpg")
+
+    //-   source(media="(min-width: 576px)", src="images/images/girl-playing-table-wide-responsive@2x.jpg")
+
     .container
       h2 Meet Osmo
       p.meet-desc.mb-5 Osmo is an award-winning game system that will change the way your child interacts with the iPad and iPhone by opening them up to hands-on play.
@@ -63,11 +73,11 @@ block content
               h2.pb-2.text-white Now you can play with your hands
               p Put your iPad in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
 
-            - imgClass = "touch-play-img position-absolute"
-            - src      = "images/play-on-ipad-responsive.png"
-            - size     = 700
-            - sizes    = "(min-width: 768px) 43.75rem, 95vw"
-            - alt      = "Play Osmo on iPad"
+            - className = "touch-play-img position-absolute"
+            - src       = "images/play-on-ipad-responsive.png"
+            - width     = 700
+            - sizes     = "(min-width: 768px) 43.75rem, 95vw"
+            - alt       = "Play Osmo on iPad"
             +respImg
 
             .touch-play-overlay.ipad.position-absolute
@@ -411,9 +421,9 @@ block content
       .row.justify-content-lg-center.align-items-lg-center
         .col-12.col-lg
 
-          - imgClass = "order-img mb-4 mb-lg-0"
+          - className = "order-img mb-4 mb-lg-0"
           - src      = "images/devices-fun-responsive.png"
-          - size     = 600
+          - width    = 600
           - sizes    = "(min-width: 430px) 400px, (min-width: 992px) 33.2rem, (min-width: 1200px) 37.5rem, 95vw"
           - alt      = "Osmo on mobile devices"
           +respImg

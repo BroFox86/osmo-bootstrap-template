@@ -58,19 +58,25 @@
   background: url("../images/girl-playing-table.jpg") bottom no-repeat;
   background-size: contain;
 
-  @media (min-width: $sm) and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $sm) {
-    background-image: url("../images/girl-playing-table-wide@1.5x.jpg");
-  }
-
-  @media (min-width: $sm) and (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) and (min-width: $sm) {
-    background-image: url("../images/girl-playing-table-wide@2x.jpg");
-  }
-
   @include media-breakpoint-up(sm) {
     padding-top: 60px;
     padding-bottom: 20%;
-    background-image: url("../images/girl-playing-table-wide-responsive.jpg");
     background-size: cover;
+  }
+
+  @media (min-width: $sm) and (min-resolution: 1dppx), 
+         (min-width: $sm) and (-webkit-min-device-pixel-ratio: 1) {
+    background-image: url("../images/girl-playing-table-wide-responsive.jpg");
+  }
+
+  @media (min-width: $sm) and (min-resolution: 1.5dppx), 
+         (min-width: $sm) and (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: url("../images/girl-playing-table-wide-responsive@1.5x.jpg");
+  }
+
+  @media (min-width: $sm) and (min-resolution: 2dppx), 
+         (min-width: $sm) and (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url("../images/girl-playing-table-wide-responsive@2x.jpg");
   }
 
   @include media-breakpoint-up(lg) {

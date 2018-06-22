@@ -1,10 +1,15 @@
-mixin respImg
-  - var src1 = src + " " + size + "w"
-  - var src2 = src.replace(/(\.[\w\d_-]+)$/i, "@1\.5x$1") + " " + size * 1.5 + "w"
-  - var src3 = src.replace(/(\.[\w\d_-]+)$/i, "@2x$1")  + " " + size * 2   + "w"
+//- ==========================================================================
+//- Responsive image mixins
+//- ==========================================================================
 
-  img(class  = imgClass
-      srcset = src1 + ", " + src2 + ", " + src3
-      sizes  = sizes
-      src    = src
-      alt    = alt)
+mixin respImg
+  - var src1 = src + " " + width + "w"
+  - var src2 = src.replace(/(\.[\w\d_-]+)$/i, "@1\.5x$1") + " " + width * 1.5 + "w"
+  - var src3 = src.replace(/(\.[\w\d_-]+)$/i, "@2x$1")  + " " + width * 2   + "w"
+
+  img(
+    class  = className
+    srcset = src1 + ", " + src2 + ", " + src3
+    sizes  = width / 16 + "rem"
+    src	   = src
+    alt	   = "")
