@@ -1,0 +1,10 @@
+.order {
+  &-img {
+    width: 100%;
+    max-width: 400px;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 600px;
+    }
+  }
+}

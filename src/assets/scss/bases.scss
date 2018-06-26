@@ -1,0 +1,29 @@
+.bases {
+  background: radial-gradient(circle, #be4bd5, #7d2f9f);
+  font-size: $font-size-lg;
+
+  @include media-breakpoint-up(md) {
+    font-size: 26px;
+  }
+
+  &-devices {
+    @include media-breakpoint-up(md) {
+      width: 47px;
+      height: 47px;
+    }
+  }
+
+  &-btn {
+    color: white;
+    border: 1px solid white;
+
+    &:hover {
+      color: #c24dd9;
+      background: white;
+    }
+  }
+
+  .bases-btn:hover svg {
+    fill: #c24dd9;
+  }
+}

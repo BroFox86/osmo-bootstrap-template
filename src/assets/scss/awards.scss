@@ -1,0 +1,48 @@
+.awards {
+  background: #f4f7fc;
+
+  &-container {
+    @include media-breakpoint-up(xl) {
+      width: 1140px;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  &-logo {
+    display: block;
+    background: url("../images/award-logos.png") no-repeat;
+    background-size: 100px 72px;
+
+    &.toty {
+      width: 62px;
+      height: 18px;
+      background-position: 0 0;
+    }
+
+    &.good-design {
+      width: 60px;
+      height: 18px;
+      background-position: 0 -54px;
+    }
+
+    &.time-inventions {
+      width: 60px;
+      height: 18px;
+      background-position: 0 -19px;
+    }
+
+    &.most-innovative {
+      width: 99px;
+      height: 16px;
+      background-position: 0 -37px;
+    }
+  }
+
+  &-year {
+    font-size: $font-size-sm;
+  }
+}

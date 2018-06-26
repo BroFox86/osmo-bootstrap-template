@@ -1,0 +1,17 @@
+.main-video
+  video.main-video-stream.d-block(poster="images/main-video.jpg", preload="none", muted, loop, playsinline)
+    source(src="videos/main-video.webm", type="video/webm")
+    source(src="videos/main-video.mp4", type="video/mp4")
+    | Video is not supported by your browser.
+    a(href="videos/main-video.mp4") Download this video
+  button.btn.x-btn-play.main-video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain")
+    svg(width="35" height="35" fill="white")
+        use(xlink:href="#play")
+
+.modal.fade(id="modalVideoMain")
+    .modal-dialog.modal-lg.modal-dialog-centered
+      .modal-content.border-0.bg-transparent
+        .modal-body
+          button.close.mb-2.text-white(type="button" data-dismiss="modal") &times;
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item(src="https://www.youtube.com/embed/1JoIqEGuSlk?rel=0" allowfullscreen)

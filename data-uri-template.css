@@ -1,0 +1,4 @@
+.{{className}} {
+  background-image: url("{{dataURISchema}}");
+  background-repeat: no-repeat;
+}

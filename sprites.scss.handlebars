@@ -1,0 +1,21 @@
+{{!-- =======================================================================
+      Handlebars template that generates the scss file
+      ===================================================================== --}}
+
+{{#spritesheet}}
+$total_width: {{width}};
+$total_height: {{height}};
+
+.sprite-image {
+  background-image: url("../images/{{{escaped_image}}}");
+}
+{{/spritesheet}}
+
+{{#each sprites}}
+.{{name}} {
+  width: {{px.width}};
+  height: {{px.height}};
+  background-size: (($total_width / {{width}}) * 100%) (($total_height / {{height}}) * 100%);
+  background-position: (({{offset_x}} / ($total_width - {{width}})) * -100%) (({{offset_y}} / ($total_height - {{height}})) * -100%);
+}
+{{/each}}

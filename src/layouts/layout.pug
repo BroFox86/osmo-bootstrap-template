@@ -1,5 +1,5 @@
 doctype html
-include /pug/mixins
+include /includes/mixins
 
 block head
   head
@@ -10,7 +10,7 @@ block head
     meta(name="robots" content="noindex")
 
     // build:css css/styles.min.css
-    link(href="css/main.css" rel="stylesheet")
+    link(href="css/custom.css" rel="stylesheet")
     // endbuild 
 
 block page
@@ -23,25 +23,25 @@ block page
     // endinject
 
     block header
-      include /components/*/header
+      include ../includes/_header
       +header
 
     block content
 
     block footer
-      include /components/*/footer
+      include ../includes/_footer
 
     block scripts
       script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 
-      // build:js js/main.min.js
+      // build:js js/global.min.js
       script(src="js/index.js")
       script(src="js/util.js")
       script(src="js/modal.js")
       script(src="js/tab.js")
-      script(src="js/scripts.js")
+      script(src="js/custom.js")
       // endbuild 
 
       // build:remove 
-      script(src="js/_viewport.js")
+      script(src="js/_viewport-size.js")
       // endbuild 

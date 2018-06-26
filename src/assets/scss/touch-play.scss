@@ -1,0 +1,151 @@
+.touch-play {
+  overflow: hidden;
+  padding-top: 50px;
+  background: radial-gradient(circle, lighten(#2a81b9, 13), #2a81b9);
+  background-size: contain;
+
+  &-wrapper {
+    padding-bottom: 55%;
+
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 350px;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 150px;
+    }
+  }
+
+  &-tabs {
+    z-index: 4;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 50px;
+      margin-left: 350px;
+    }
+  }
+
+  &-link {
+    padding: 14px 21px 12px;
+    text-decoration: none !important;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    &:hover {
+      color: #2192cc;
+      background: white;
+    }
+
+    &:hover .touch-play-icon {
+      fill: #2192cc;
+    }
+
+    &.active {
+      border: 1px solid white;
+      border-radius: 10px;
+    }
+  }
+
+  &-tab-content {
+    @include media-breakpoint-up(md) {
+      width: 320px;
+      margin-left: 350px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 400px;
+    }
+  }
+
+  &-tab-inner {
+    z-index: 4;
+    padding-bottom: 100px;
+  }
+
+  &-img {
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      left: 0;
+      width: 600px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 700px;
+    }
+  }
+
+  &-overlay {
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 60vw;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    @include media-breakpoint-up(sm) {
+      left: 0;
+      width: 600px;
+      height: 400px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 700px;
+      height: 500px;
+    }
+  }
+
+  &-overlay.ipad {
+    animation-name: shimmer-ipad;
+    animation-duration: 1.5s;
+  }
+
+  &-overlay.iphone {
+    animation-name: shimmer-iphone;
+    animation-duration: 1.5s;
+  }
+
+  &-overlay.hand {
+    z-index: 3;
+    animation-name: shimmer-hand;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    background-image: url("../images/hand-overlay.png");
+  }
+}
+
+@keyframes shimmer-ipad {
+  from {
+    background-image: url("../images/ipad-rays-first.png");
+  }
+
+  to {
+    background-image: url("../images/ipad-rays-second.png");
+  }
+}
+
+@keyframes shimmer-iphone {
+  from {
+    background-image: url("../images/iphone-rays-first.png");
+  }
+
+  to {
+    background-image: url("../images/iphone-rays-second.png");
+  }
+}
+
+@keyframes shimmer-hand {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
