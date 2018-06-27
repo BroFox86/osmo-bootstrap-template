@@ -1,22 +1,26 @@
 /* ==========================================================================
-   Play the video intro after the page is completely loaded
+   Video autoplay & preload handlers
    ========================================================================== */
+
+/*
+ * Play the main video after the page is completely loaded
+ */
 
 $(window).on("load", function() {
   $(".main-video-stream").get(0).play();
 });
 
-/* ==========================================================================
-   Preload videos after the page is completely loaded
-   ========================================================================== */
+/*
+ * Preload videos after the page is completely loaded
+ */
 
 $(window).on("load", function() {
   $("[data-toggle='autoplayControl']").attr("preload", "metadata");
 });
 
-/* ==========================================================================
-   Play/pause videos depending on their position on a screen
-   ========================================================================== */
+/*
+ * Play/pause videos depending on their position on a screen
+ */
 
 function isInVisibleRange(element) {
   "use strict";
@@ -37,12 +41,10 @@ function isInVisibleRange(element) {
 
 $(window).on("resize scroll", function() {
   $("[data-toggle='autoplayControl']").each(function() {
-
     if (isInVisibleRange(this)) {
       $(this).get(0).play();
     } else {
       $(this).get(0).pause();
     }
-
   });
 });

@@ -1,6 +1,4 @@
-displayViewportSize();
-
-function displayViewportSize() {
+(function(){
   "use strict";
 
   var scrollbar = 15,
@@ -30,5 +28,4 @@ function displayViewportSize() {
     "z-index": "9999",
     color: "blue"
   });
-}
-
+})()
