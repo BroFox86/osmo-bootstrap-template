@@ -296,7 +296,7 @@ gulp.task("styles:dist", function() {
       postcss([
         uncss({
           html: ["dist/[^google]*.html"],
-          ignore: [/.*[is,has]-.*/],
+          ignore: [/.*[is,has]-.*/, /.*modal.*/],
           ignoreSheets: [/fonts.googleapis/]
         })
       ])
@@ -312,7 +312,8 @@ gulp.task("styles:dist", function() {
 gulp.task("scripts:plugins", function() {
   return gulp
     .src(paths.plugins.js)
-    .pipe(gulp.dest(".tmp/js/"));
+    .pipe(changed("src/js/"))
+    .pipe(gulp.dest("src/js/"));
 });
 
 gulp.task("scripts:common", function() {
@@ -321,7 +322,7 @@ gulp.task("scripts:common", function() {
     .pipe(gulp.dest(".tmp/js/"));
 });
 
-gulp.task("scripts:blocks", function() {
+gulp.task("scripts:assets", function() {
   return gulp
     .src("src/assets/js/*.js")
     .pipe(concat("custom.js"))
@@ -329,11 +330,10 @@ gulp.task("scripts:blocks", function() {
 });
 
 gulp.task("scripts", function(callback) {
-  gulpSequence([
-    "scripts:plugins",
-    "scripts:common",
-    "scripts:blocks"
-  ])(callback);
+  gulpSequence(
+    ["scripts:plugins"],
+    ["scripts:common", "scripts:assets"]
+  )(callback);
 });
 
 gulp.task("scripts:minify", function() {

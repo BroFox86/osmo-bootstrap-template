@@ -3,13 +3,11 @@
    ========================================================================== */
 
 (function() {
-  
-  var toggle = "[data-toggle='nestedList']",
-      target = "[data-target='nestedList']";
 
-  function handleNestedList(toggle, target) {
-    var $body = $("body"),
-        duration = 400;
+  var toggle   = "[data-toggle='nestedList']",
+      target   = "[data-target='nestedList']",
+      $body    = $("body"),
+      duration = 400;
   
     function click() {
       $(target).css("height", "auto");
@@ -34,7 +32,6 @@
         executedDesktop = false;
   
     $(window).on("DOMContentLoaded resize", function() {
-  
       height = $(target).innerHeight;
       $(target).css("height", height);
   
@@ -43,6 +40,7 @@
           .on("click", toggle, click)
           .off("mouseenter", toggle, mouseenter)
           .off("mouseleave", toggle, mouseleave);
+
         executed = true;
         executedDesktop = false;
   
@@ -51,13 +49,9 @@
           .off("click", toggle, click)
           .on("mouseenter", toggle, mouseenter)
           .on("mouseleave", toggle, mouseleave);
+
         executedDesktop = true;
         executed = false;
       }
     });
-  };
-})
-()
-
-
-
+}) ()
