@@ -9,13 +9,13 @@ Manually re-created Osmo shop homepage from the [original one](https://www.playo
 * Responsive images via HTML5 attributes and CSS3 media queries
 * PostCSS plugins: Autoprefixer, UnCSS and PX to REM converter 
 * Play/pause videos depending on their position on a screen
-* Gradual video content download. 
-* SVG icons which are injected into HTML files
+* Gradual video content download 
+* Injected SVG sprite
 * Gotham font was replaced by the free alternative Montserrat
 
 ## Approach
 
-I tried to follow the same code style and approach which is [recommended](https://getbootstrap.com/docs/4.1/extend/approach/) by the Bootstrap developers:
+I tried to follow the same code style and approach that is [recommended](https://getbootstrap.com/docs/4.1/extend/approach/) by the Bootstrap developers:
 
 > * Components should be responsive and mobile-first
 > * Components should be built with a base class and extended via modifier classes
