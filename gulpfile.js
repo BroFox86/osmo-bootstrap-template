@@ -13,12 +13,10 @@ var // Common
   rename       = require("gulp-rename"),
   replace      = require("gulp-replace"),
   run          = require("gulp-run"),
-  fs           = require("fs"),
   concat       = require("gulp-concat"),
   flatten      = require("gulp-flatten"),
   changed      = require("gulp-changed"),
   inject       = require("gulp-inject"),
-  injectString = require("gulp-inject-string"),
   watch        = require("gulp-watch"),
   browserSync  = require("browser-sync"),
   // HTML
@@ -38,7 +36,6 @@ var // Common
   mqpacker     = require("css-mqpacker"),
   pxtorem      = require("postcss-pxtorem"),
   uncss        = require("uncss").postcssPlugin,
-  penthouse    = require("penthouse"),
   // Scripts
   uglify = require("gulp-uglify"),
   // Images
@@ -47,10 +44,7 @@ var // Common
   responsive             = require("gulp-responsive"),
   imageminSvgo           = require("imagemin-svgo"),
   imageminJpegRecompress = require("imagemin-jpeg-recompress"),
-  imageDataURI           = require("gulp-image-data-uri"),
-  spritesmith            = require("gulp.spritesmith-multi"),
-  buffer                 = require("vinyl-buffer"),
-  merge                  = require("merge-stream");
+  imageDataURI           = require("gulp-image-data-uri");
 
 /* ==========================================================================
    Paths and parameters
@@ -66,21 +60,6 @@ var paths = {
     // ]
   }
 };
-
-// var criticalOptns = {
-//   url: "",
-//   forceInclude: [""],
-//   propertiesToRemove: [""]
-// };
-
-// var spriteOptns = {
-//   spritesmith: function (options, sprite){
-//     options.imgName= sprite + ".png",
-//     options.cssName= "_" + sprite + ".scss",
-//     options.cssTemplate= "sprites.scss.handlebars",
-//     options.padding= 2
-//   }
-// }
 
 /* ==========================================================================
    Clean
@@ -142,43 +121,6 @@ gulp.task("html:dist", function() {
       .pipe(
         plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
       )
-      // .pipe(
-      //   inject(
-      //     gulp
-      //     .src(".tmp/_critical.css")
-      //     .pipe(replace("../", ""))
-      //     .pipe(postcss([cssnano()]))
-      //     .pipe(injectString.prepend("<style>"))
-      //     .pipe(injectString.append("</style>")), {
-      //       starttag: "<!-- inject:critical:{{ext}} -->",
-      //       transform: function(filePath, file) {
-      //         return file.contents.toString("utf8")
-      //       }
-      //     }
-      //   )
-      // )
-      // .pipe(
-      //   inject(
-      //     gulp
-      //     .src(
-      //       "node_modules/fg-loadcss/src/cssrelpreload.js"
-      //     )
-      //     .pipe(concat("fg-loadcss.html"))
-      //     .pipe(injectString.prepend("<script>"))
-      //     .pipe(injectString.append("</script>")), {
-      //       starttag: "<!-- inject:fg-loadcss:{{ext}} -->",
-      //       transform: function(filePath, file) {
-      //         return file.contents.toString("utf8")
-      //       }
-      //     }
-      //   )
-      // )
-      // .pipe(
-      //   replace(
-      //     /^.*inject-string:noscript.*$/m,
-      //     '<noscript><link rel="stylesheet" href="css/styles.min.css"></noscript>'
-      //   )
-      // )
       .pipe(useref())
       .pipe(gulp.dest("dist/"))
   );
@@ -219,25 +161,6 @@ gulp.task("html:validate", function() {
    Generate CSS
    ========================================================================== */
 
-// gulp.task("styles:plugins", function () {
-//   return gulp
-//     .src(paths.plugins.css)
-//     .pipe(
-//       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-//     )
-//     .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
-//     .pipe(
-//       postcss([
-//         pxtorem({
-//           propList: ["*", "!box-shadow"]
-//         }),
-//         // autoprefixer(),
-//         // mqpacker()
-//       ])
-//     )
-//     .pipe(gulp.dest(".tmp/css/"));
-// });
-
 gulp.task("styles:custom", function() {
   return gulp
     .src([
@@ -263,28 +186,8 @@ gulp.task("styles:custom", function() {
 });
 
 gulp.task("styles", function(callback) {
-  gulpSequence([
-    // "styles:plugins",
-    "styles:custom"
-  ])(callback);
+  gulpSequence("styles:custom")(callback);
 });
-
-// gulp.task("styles:critical", function(callback) {
-//   penthouse(
-//     {
-//       url: criticalOptns.url,
-//       css: ".tmp/css/main.css",
-//       forceInclude: criticalOptns.forceInclude,
-//       propertiesToRemove: criticalOptns.propertiesToRemove
-//     },
-//     function(err, criticalCss) {
-//       fs.writeFileSync(".tmp/css/_critical.css", criticalCss);
-//     },
-//     setTimeout(function() {
-//       callback();
-//     }, 2000)
-//   );
-// });
 
 gulp.task("styles:dist", function() {
   return gulp
@@ -483,34 +386,6 @@ gulp.task("images:sprites:svg", function() {
     .pipe(gulp.dest(".tmp/images/"))
 });
 
-/* Raster sprites
-   ========================================================================== */
-
-   gulp.task("images:sprites:raster", function () {
-
-    var spriteData =
-      gulp
-        .src("src/assets/images/_images-to-sprite/*/*.*")
-        .pipe(spritesmith(spriteOptns));
-  
-    var imgStream = spriteData.img
-      .pipe(buffer())
-      .pipe(
-        imagemin([
-          imagemin.optipng(),
-          imageminJpegRecompress({
-            plugins: [{ target: 80 }]
-          })
-        ])
-      )
-      .pipe(gulp.dest(".tmp/images/"));
-  
-    var cssStream = spriteData.css
-      .pipe(gulp.dest("src/assets/images/_images-to-sprite/"));
-  
-    return merge(imgStream, cssStream);
-  });
-
 /* Images: build and test
    ========================================================================== */
 
@@ -561,22 +436,6 @@ gulp.task("fonts", function() {
 gulp.task("fonts:dist", function() {
   return gulp.src("src/assets/fonts/**").pipe(gulp.dest("dist/fonts/"));
 });
-  
-/* ==========================================================================
-    Misc
-   ========================================================================== */
-
-// gulp.task("favicons", function() {
-//   return gulp
-//     .src("src/assets/favicons/**")
-//     .pipe(gulp.dest("dist/"));
-// });
-
-// gulp.task("metadata", function() {
-//   return gulp
-//     .src("src/metadata/*.*")
-//     .pipe(gulp.dest("dist/"));
-// });
 
 /* ==========================================================================
    Watch the files
@@ -689,12 +548,8 @@ gulp.task("build", function(callback) {
   gulpSequence(
     ["clean"],
     ["prebuild"],
-    // ["styles:critical"],
     ["html:dist"],
-    ["html:minify", "styles:dist", "scripts:minify", "images:dist", "videos:dist", "fonts:dist", 
-    // "favicons", 
-    // "metadata"
-  ],
+    ["html:minify", "styles:dist", "scripts:minify", "images:dist", "videos:dist", "fonts:dist"],
     ["html:validate"]
   )(callback);
 });
