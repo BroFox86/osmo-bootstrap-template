@@ -150,9 +150,7 @@
     height: 36px;
     margin-right: 16px;
     border-radius: 22%;
-    background-image: url("../images/game-icons-responsive.jpg");
-    background-repeat: no-repeat;
-    background-size: 475% 350%;
+    background: url("../images/game-icons-responsive.jpg") 0 0 / 475% 350% no-repeat;
     transition: transform .2s ease-out;
 
     &:hover {

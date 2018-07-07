@@ -1,6 +1,11 @@
 doctype html
 include /includes/mixins
 
+//-
+//- <html> tag is deliberately omitted.
+//- Info here: google.github.io/styleguide/htmlcssguide.html#Optional_Tags
+//-
+
 block head
   head
     meta(charset="utf-8")
@@ -14,10 +19,13 @@ block head
     // endbuild 
 
 block page
-  body
+  body(lang="en")
     <!--[if lte IE 10]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
+
+    noscript
+      span.noscript JavaScript is disabled!
 
     // inject:svg
     // endinject

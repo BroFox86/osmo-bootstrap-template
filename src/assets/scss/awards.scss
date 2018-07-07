@@ -14,8 +14,7 @@
 
   &-logo {
     display: block;
-    background: url("../images/award-logos.png") no-repeat;
-    background-size: 100px 72px;
+    background: url("../images/award-logos.png") 0 0 / 100px 72px no-repeat;
 
     &.toty {
       width: 62px;

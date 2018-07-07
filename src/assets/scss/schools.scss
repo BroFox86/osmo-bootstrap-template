@@ -19,8 +19,7 @@
     position: relative;
     width: 100%;
     height: 267px;
-    background: url("../images/schools.jpg") no-repeat center;
-    background-size: contain;
+    background: url("../images/schools.jpg") center/contain no-repeat;
 
     @include media-breakpoint-up(md) {
       width: 702px;

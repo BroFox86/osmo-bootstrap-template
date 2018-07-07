@@ -1,8 +1,7 @@
 .meet {
   padding-top: 40px;
   padding-bottom: 70%;
-  background: url("../images/girl-playing-table.jpg") bottom no-repeat;
-  background-size: contain;
+  background: url("../images/girl-playing-table.jpg") bottom/contain no-repeat;
 
   @include media-breakpoint-up(sm) {
     padding-top: 60px;
@@ -31,8 +30,6 @@
     background-position: right;
     background-size: auto 100%;
   }
-
-  
 
   &-desc {
     width: 100%;

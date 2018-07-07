@@ -4,7 +4,7 @@ Manually re-created Osmo shop homepage from the [original one](https://www.playo
 
 ## Features
 
-* Based on Bootstrap 4.1 as the NPM package
+* Based on Bootstrap 4.1
 * Responsive/Adaptive design
 * Responsive images via HTML5 attributes and CSS3 media queries
 * PostCSS plugins: Autoprefixer, UnCSS and PX to REM converter 

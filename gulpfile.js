@@ -54,10 +54,7 @@ var paths = {
   plugins: {
     js: [
       "node_modules/bootstrap/js/dist/+(index|util|modal|tab).js"
-    ],
-    // css: [
-    //   ""
-    // ]
+    ]
   }
 };
 
