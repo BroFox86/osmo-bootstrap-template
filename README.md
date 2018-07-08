@@ -32,7 +32,7 @@ Some other guides and approaches which i followed anyway:
 ## Google PSI
 
 [This](https://brofox86.github.io/osmo-bootstrap-template/) template: <br>
-Mobile: 94/100 | Desktop: 82/100
+Mobile: 92/100 | Desktop: 85/100
 <br><br>
 [Original](https://www.playosmo.com/en/) website: <br>
 Mobile: 88/100 | Desktop: 56/100
