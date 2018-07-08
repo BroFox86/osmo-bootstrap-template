@@ -44,6 +44,7 @@ var // Common
   responsive             = require("gulp-responsive"),
   imageminSvgo           = require("imagemin-svgo"),
   imageminJpegRecompress = require("imagemin-jpeg-recompress"),
+  imageminPngquant       = require('imagemin-pngquant'),
   imageDataURI           = require("gulp-image-data-uri");
 
 /* ==========================================================================
@@ -250,28 +251,12 @@ gulp.task("scripts:minify", function() {
    Optimize images
    ========================================================================== */
 
-gulp.task("images:minify", function() {
+gulp.task("images:copy", function() {
   return gulp
     .src([
       "src/assets/images/!(_)*/**/!(*-responsive)*",
       "src/assets/images/!(*-responsive)*.*",
     ])
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    )
-    .pipe(
-      cache(
-        imagemin([
-          imagemin.optipng(),
-          imageminJpegRecompress({
-            plugins: [{ target: 80 }]
-          }),
-          imageminSvgo({
-            plugins: [{ removeViewBox: false }]
-          })
-        ])
-      )
-    )
     .pipe(flatten())
     .pipe(gulp.dest(".tmp/images/"));
 });
@@ -283,9 +268,9 @@ var respOptions = {
     errorOnUnusedImage: false,
     errorOnUnusedConfig: false,
     errorOnEnlargement: false,
+    quality: 100,
     silent: true,
-    quality: 80,
-    compressionLevel: 9
+    compressionLevel: 1
   },
   large = "@1.5x",
   huge = "@2x";
@@ -383,22 +368,35 @@ gulp.task("images:sprites:svg", function() {
     .pipe(gulp.dest(".tmp/images/"))
 });
 
-/* Images: build and test
+/* Minify Images
    ========================================================================== */
+
+gulp.task("images:minify", function () {
+  return gulp
+    .src(".tmp/images/**/!(icons.svg)*")
+    .pipe(
+      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
+    )
+    .pipe(
+      cache(
+        imagemin([
+          imageminPngquant({
+            quality: 90
+          }),
+          imageminJpegRecompress({
+            plugins: [{ target: 80 }]
+          })
+        ])
+      )
+    )
+    .pipe(flatten())
+    .pipe(gulp.dest("dist/images/"));
+});
 
 gulp.task("images", function(callback) {
   gulpSequence(
-    ["images:minify", "images:responsive"]
+    ["images:copy", "images:responsive"]
   )(callback);
-});
-
-gulp.task("images:dist", function() {
-  return gulp
-    .src(".tmp/images/**/!(icons.svg)*")
-
-    // For external SVG sprite
-    // .src(".tmp/images/**")
-    .pipe(gulp.dest("dist/images/"));
 });
 
 /* ==========================================================================
@@ -546,7 +544,7 @@ gulp.task("build", function(callback) {
     ["clean"],
     ["prebuild"],
     ["html:dist"],
-    ["html:minify", "styles:dist", "scripts:minify", "images:dist", "videos:dist", "fonts:dist"],
+    ["html:minify", "styles:dist", "scripts:minify", "images:minify", "videos:dist", "fonts:dist"],
     ["html:validate"]
   )(callback);
 });
