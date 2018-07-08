@@ -44,7 +44,7 @@ var // Common
   responsive             = require("gulp-responsive"),
   imageminSvgo           = require("imagemin-svgo"),
   imageminJpegRecompress = require("imagemin-jpeg-recompress"),
-  imageminPngquant       = require('imagemin-pngquant'),
+  imageminPngquant       = require("imagemin-pngquant"),
   imageDataURI           = require("gulp-image-data-uri");
 
 /* ==========================================================================
@@ -384,7 +384,7 @@ gulp.task("images:minify", function () {
             quality: 90
           }),
           imageminJpegRecompress({
-            plugins: [{ target: 80 }]
+            target: 0.8
           })
         ])
       )
