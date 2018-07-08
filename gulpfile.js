@@ -316,7 +316,7 @@ gulp.task("images:data-uri", function() {
       imagemin([
         imagemin.optipng(),
         imageminJpegRecompress({
-          plugins: [{ target: 10 }]
+          target: 0.8
         }),
         imageminSvgo({
           plugins: [{ removeViewBox: false }]
