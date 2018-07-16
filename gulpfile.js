@@ -39,7 +39,6 @@ var // Common
   // Scripts
   uglify = require("gulp-uglify"),
   // Images
-  cache                  = require("gulp-cache"),
   imagemin               = require("gulp-imagemin"),
   responsive             = require("gulp-responsive"),
   imageminSvgo           = require("imagemin-svgo"),
@@ -73,13 +72,8 @@ gulp.task("clean:dist", function() {
   del.sync("dist/**");
 });
 
-gulp.task("clean:cache", function() {
-  console.log("----- Cleaning cache -----");
-  return cache.clearAll();
-});
-
 gulp.task("clean", function(callback) {
-  gulpSequence(["clean:tmp", "clean:dist", "clean:cache"])(callback);
+  gulpSequence(["clean:tmp", "clean:dist"])(callback);
 });
 
 /* ==========================================================================
@@ -248,7 +242,7 @@ gulp.task("scripts:minify", function() {
 });
 
 /* ==========================================================================
-   Optimize images
+   Images
    ========================================================================== */
 
 gulp.task("images:copy", function() {
@@ -286,13 +280,13 @@ gulp.task("images:responsive", function() {
       responsive(
         {
           "**/*": [
-            { width: 700 },
+            { width: 1000 },
             {
-              width: 700 * 1.5,
+              width: 1000 * 1.5,
               rename: { suffix: large }
             },
             {
-              width: 700 * 2,
+              width: 1000 * 2,
               rename: { suffix: huge }
             }
           ]
@@ -378,16 +372,14 @@ gulp.task("images:minify", function () {
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )
     .pipe(
-      cache(
-        imagemin([
-          imageminPngquant({
-            quality: 90
-          }),
-          imageminJpegRecompress({
-            target: 0.8
-          })
-        ])
-      )
+      imagemin([
+        imageminPngquant({
+          quality: 90
+        }),
+        imageminJpegRecompress({
+          quality: "high"
+        })
+      ])
     )
     .pipe(flatten())
     .pipe(gulp.dest("dist/images/"));

@@ -3,14 +3,6 @@
    ========================================================================== */
 
 /*
- * Play the main video after the page is completely loaded
- */
-
-$(window).on("load", function() {
-  $(".main-video-stream").get(0).play();
-});
-
-/*
  * Preload videos after the page is completely loaded
  */
 
