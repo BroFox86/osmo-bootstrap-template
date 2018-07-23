@@ -27,7 +27,6 @@
   }
 
   &-form-email {
-    width: 260px;
     font-size: 13px;
   }
 
@@ -48,6 +47,7 @@
 
   &-form-btn {
     right: -1px;
+    height: 100%;
     padding: 10px 20px;
     border-radius: 40px;
     font-size: 13px;

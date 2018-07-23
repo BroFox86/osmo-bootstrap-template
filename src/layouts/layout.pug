@@ -1,5 +1,5 @@
 doctype html
-include /includes/mixins
+include /assets/includes/mixins
 
 //-
 //- <html> tag is deliberately omitted.
@@ -15,7 +15,7 @@ block head
     meta(name="robots" content="noindex")
 
     // build:css css/styles.min.css
-    link(href="css/custom.css" rel="stylesheet")
+    link(href="css/main.css" rel="stylesheet")
     // endbuild 
 
 block page
@@ -24,20 +24,19 @@ block page
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-    noscript
-      span.noscript JavaScript is disabled!
+    <noscript>For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="https://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</noscript>
 
     // inject:svg
     // endinject
 
     block header
-      include /includes/_header
+      include /assets/includes/header
       +header
 
     block content
 
     block footer
-      include /includes/_footer
+      include /assets/includes/footer
 
     block scripts
       script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
@@ -51,5 +50,5 @@ block page
       // endbuild 
 
       // build:remove 
-      script(src="js/_viewport-size.js")
+      script(src="js/_viewport.js")
       // endbuild 

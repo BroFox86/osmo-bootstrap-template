@@ -11,6 +11,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    &.is-ie {
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+    }
   }
 
   &-btn {

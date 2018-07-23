@@ -9,9 +9,7 @@
     background-size: cover;
   }
 
-  @media (min-width: $sm) and (min-resolution: 1dppx), 
-         (min-width: $sm) and (-webkit-min-device-pixel-ratio: 1),
-         (min-width: $sm) {
+  @media (min-width: $sm) {
     background-image: url("../images/girl-playing-table-wide-responsive.jpg");
   }
 

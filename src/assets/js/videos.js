@@ -1,13 +1,23 @@
-/* ==========================================================================
-   Video autoplay & preload handlers
-   ========================================================================== */
+/*
+ * Set fullscreen hack if it's IE
+ */
+
+(function() {
+  var userAgent = window.navigator.userAgent,
+      ie11      = userAgent.match(/Trident.*rv\:11\./),
+      ie        = userAgent.match("MSIE");
+
+  if (ie != null || ie11 != null ){
+    $("[data-toggle='mainVideo']").addClass("is-ie");
+  } 
+}) ()
 
 /*
  * Preload videos after the page is completely loaded
  */
 
 $(window).on("load", function() {
-  $("[data-toggle='autoplayControl']").attr("preload", "metadata");
+  $("[data-toggle='video']").attr("preload", "metadata");
 });
 
 /*
@@ -32,7 +42,7 @@ function isInVisibleRange(element) {
 }
 
 $(window).on("resize scroll", function() {
-  $("[data-toggle='autoplayControl']").each(function() {
+  $("[data-toggle='video']").each(function() {
     if (isInVisibleRange(this)) {
       $(this).get(0).play();
     } else {

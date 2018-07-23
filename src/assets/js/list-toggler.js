@@ -7,24 +7,37 @@
   var toggle   = "[data-toggle='nestedList']",
       target   = "[data-target='nestedList']",
       $body    = $("body"),
-      duration = 400;
+      duration = 360;
   
     function click() {
-      $(target).css("height", "auto");
-      $(toggle).toggleClass("is-expanded");
-      $(target).slideToggle(duration);
+      $(target)
+        .css("height", "auto");
+      $(toggle)
+        .toggleClass("is-expanded");
+      $(target)
+        .slideToggle(duration);
     }
   
     function mouseenter() {
-      $(toggle).addClass("is-expanded");
-      $(target).stop().slideDown(duration);
-      $(target + " ul").animate({ top: "30px" }, duration);
+      $(toggle)
+        .addClass("is-expanded");
+      $(target)
+        .stop()
+        .slideDown(duration);
+      $(target + " ul")
+        .stop()
+        .animate({ top: "25px" }, duration);
     }
   
     function mouseleave() {
-      $(toggle).removeClass("is-expanded")
-      $(target).stop().slideUp(duration);
-      $(target + " ul").animate({ top: "0" }, duration);
+      $(toggle)
+        .removeClass("is-expanded");
+      $(target)
+        .stop()
+        .slideUp(duration);
+      $(target + " ul")
+        .stop()
+        .animate({ top: "0" }, duration);
     }
   
     var height,
@@ -35,7 +48,8 @@
       height = $(target).innerHeight;
       $(target).css("height", height);
   
-      if (window.matchMedia("(max-width: 768px)").matches && executed == false) {
+      if (window.matchMedia("(max-width: 768px)").matches 
+          && executed == false) {
         $body
           .on("click", toggle, click)
           .off("mouseenter", toggle, mouseenter)
@@ -44,7 +58,8 @@
         executed = true;
         executedDesktop = false;
   
-      } else if (window.matchMedia("(min-width: 769px)").matches && executedDesktop == false) {
+      } else if (window.matchMedia("(min-width: 769px)").matches 
+                 && executedDesktop == false) {
         $body
           .off("click", toggle, click)
           .on("mouseenter", toggle, mouseenter)

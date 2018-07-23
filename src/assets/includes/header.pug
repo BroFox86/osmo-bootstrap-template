@@ -1,0 +1,78 @@
+mixin header
+  header.menu.position-fixed.fixed-top.shadow-sm
+    nav.navbar.navbar-expand-md.p-md-3
+      .container.menu-container
+        .hamburger.d-md-none(data-toggle="menuToggler")
+          .hamburger-bar
+          .hamburger-bar
+          .hamburger-bar
+        a.navbar-brand.mx-auto.m-md-0.order-md-1(href="#")
+          img.d-md-none(src="images/logo.png" alt="Osmo logo" width="100")
+          img.d-none.d-md-block(src="images/logo.png" alt="Osmo logo" width="154")
+        a.btn.menu-shop.order-md-3.text-white(href="#")
+          | Shop 
+          span.d-none.d-md-inline now
+
+        .menu-list-wrapper.order-md-2(data-target="navList")
+          ul.navbar-nav.mb-5.py-4.pl-4.m-md-0.p-md-0
+            li.nav-item.menu-popup-item.mr-md-4(data-toggle="nestedList")
+              .nav-link.menu-link.position-relative.d-inline-block
+                | Games
+                .menu-arrow-wrapper.d-inline-block.ml-2.m-md-auto
+                  svg.menu-arrow.align-middle(width="14" height="14")
+                    use(xlink:href="#arrow-down")
+              .menu-nested-list-wrapper(data-target="nestedList")
+                ul.navbar-nav.menu-nested-list.position-relative.flex-md-row.justify-content-around.justify-content-lg-center.pt-0.pl-3.p-md-0
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.mindracers.d-block.mb-md-3
+                      span.d-block Hot Wheels™ 
+                        br
+                        | MindRacers
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.codingjam.d-block.mb-md-3
+                      span.d-block.text-md-center Coding 
+                        br.d-none.d-md-block 
+                        | Jam
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.codingawbie.d-block.mb-md-3
+                      span.d-block.text-md-center Coding 
+                        br.d-none.d-md-block 
+                        | Awbie
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.pizzaco.d-block.mb-md-3
+                      span.d-block.text-md-center Pizza Co.
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.monster.d-block.mb-md-3
+                      span.d-block Monster
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.numbers.d-block.mb-md-3
+                      span.d-block Numbers
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.masterpiece.d-block.mb-md-3
+                      span.d-block Masterpiece
+                  li.mr-lg-5
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.words.d-block.mb-md-3
+                      span.d-block Words
+                  li
+                    a.nav-link.menu-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
+                      span.menu-game.newton.d-block.mb-md-3
+                      span.d-block Newton
+
+            li.nav-item.mr-md-4
+              a.nav-link.menu-link.d-inline-block(href="#") Schools
+            li.nav-item.mr-md-4
+              a.nav-link.menu-link.d-inline-block(href="#") FAQ
+            li.nav-item.d-md-none
+              a.nav-link.menu-link.d-inline-block(href="#") Jobs
+            li.nav-item.menu-item-image.position-relative.d-none.d-md-inline
+              a.nav-link.menu-link.d-inline-block(href="#")
+                svg(width="65" height="16")
+                  use(xlink:href="#logo-item")
