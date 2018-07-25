@@ -1,12 +1,4 @@
 /*
- * Preload videos after the page is completely loaded
- */
-
-$(window).on("load", function() {
-  $("[data-toggle='video']").attr("preload", "metadata");
-});
-
-/*
  * Play/pause videos depending on their position on a screen
  */
 
