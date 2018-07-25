@@ -289,7 +289,7 @@ gulp.task("images:data-uri", function() {
       imagemin([
         imagemin.optipng(),
         imageminJpegRecompress({
-          target: 0.8
+          quality: "medium"
         }),
         imageminSvgo({
           plugins: [{ removeViewBox: false }]
@@ -356,7 +356,7 @@ gulp.task("images:build", function () {
           quality: 90
         }),
         imageminJpegRecompress({
-          quality: "high"
+          quality: "low"
         })
       ])
     )
