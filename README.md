@@ -8,9 +8,8 @@ Manually re-created Osmo shop homepage from the [original one](https://www.playo
 * Responsive/Adaptive design
 * Responsive images via HTML5 attributes and CSS3 media queries
 * PostCSS plugins: Autoprefixer, UnCSS and PX to REM converter 
-* Play/pause videos depending on their position on a screen
-* Gradual video content download 
-* Injected SVG sprite
+* Play/pause videos depending on their position on the screen
+* SVG sprite injected in to HTML markup
 * Gotham font was replaced by the free alternative Montserrat
 
 ## Approach
