@@ -51,6 +51,7 @@
     "ie 10-11"
   ],
   "dependencies": {
-    "bootstrap": "^4.1.1"
+    "bootstrap": "^4.1.1",
+    "objectFitPolyfill": "^2.1.1"
   }
 }

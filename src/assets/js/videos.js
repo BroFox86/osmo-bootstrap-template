@@ -1,18 +1,4 @@
 /*
- * Set fullscreen hack if it's IE
- */
-
-(function() {
-  var userAgent = window.navigator.userAgent,
-      ie11      = userAgent.match(/Trident.*rv\:11\./),
-      ie        = userAgent.match("MSIE");
-
-  if (ie != null || ie11 != null ){
-    $("[data-toggle='mainVideo']").addClass("is-ie");
-  } 
-}) ()
-
-/*
  * Preload videos after the page is completely loaded
  */
 
