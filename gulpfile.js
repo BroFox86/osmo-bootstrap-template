@@ -289,7 +289,7 @@ gulp.task("images:data-uri", function() {
       imagemin([
         imagemin.optipng(),
         imageminJpegRecompress({
-          quality: "medium"
+          quality: "low"
         }),
         imageminSvgo({
           plugins: [{ removeViewBox: false }]
@@ -420,8 +420,9 @@ gulp.task("watch", function() {
 
   watch(
     [
-      "src/assets/includes/*.pug",
       "src/layouts/*.*",
+      "src/pug/**/*",
+      "src/assets/includes/*.pug",
       "src/*.pug"
     ],
     { readDelay: 200 },
