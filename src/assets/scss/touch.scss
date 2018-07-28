@@ -1,4 +1,4 @@
-.touch-play {
+.touch {
   overflow: hidden;
   padding-top: 50px;
   background: radial-gradient(circle, lighten(#2a81b9, 13), #2a81b9);
@@ -37,7 +37,7 @@
       background: white;
     }
 
-    &:hover .touch-play-icon {
+    &:hover .touch-icon {
       fill: #2192cc;
     }
 

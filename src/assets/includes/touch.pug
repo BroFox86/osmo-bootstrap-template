@@ -1,36 +1,36 @@
-section.touch-play
+.touch
   nav.container.d-flex.flex-column.align-items-center
-    .touch-play-wrapper.position-relative
-      ul.nav.nav-tabs.touch-play-tabs.position-relative.mb-4.border-0
+    .touch-wrapper.position-relative
+      ul.nav.nav-tabs.touch-tabs.position-relative.mb-4.border-0
         li.nav-item.mr-4
-          a.touch-play-link.active(href="#tablet" data-toggle="tab")
-            svg.touch-play-icon.mr-2.align-middle(width="20" height="20" fill="white")
+          a.touch-link.active(href="#tablet" data-toggle="tab")
+            svg.touch-icon.mr-2.align-middle(width="20" height="20" fill="white")
               use(xlink:href="#ipad")
             span iPad
         li.nav-item
-          a.touch-play-link(href="#mobile" data-toggle="tab")
-            svg.touch-play-icon.mr-2.align-middle(width="20" height="20" fill="white")
+          a.touch-link(href="#mobile" data-toggle="tab")
+            svg.touch-icon.mr-2.align-middle(width="20" height="20" fill="white")
               use(xlink:href="#iphone")
             span iPhone
 
-      .tab-content.touch-play-tab-content
+      .tab-content.touch-tab-content
         .tab-pane.fade.show.active.text-white#tablet
-          .touch-play-tab-inner.position-relative
+          .touch-tab-inner.position-relative
             h2.pb-2.text-white Now you can play with your hands
             p Put your iPad in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
 
-          - className = "touch-play-img position-absolute"
+          - className = "touch-img position-absolute"
           - src       = "images/play-on-ipad-responsive.png"
           - width     = 700
           - sizes     = "(min-width: 768px) 43.75rem, 95vw"
           - alt       = "Play Osmo on iPad"
           +respImg
 
-          .touch-play-overlay.ipad.position-absolute
-          .touch-play-overlay.hand.position-absolute
+          .touch-overlay.ipad.position-absolute
+          .touch-overlay.hand.position-absolute
 
         .tab-pane.fade.text-white#mobile
-          .touch-play-tab-inner.position-relative
+          .touch-tab-inner.position-relative
             h2.pb-2.text-white Osmo is now on iPhone
             p Put your iPhone in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
 
@@ -38,5 +38,5 @@ section.touch-play
           - alt = "Play Osmo on iPhone"
           +respImg
 
-          .touch-play-overlay.iphone.position-absolute
-          .touch-play-overlay.hand.position-absolute
+          .touch-overlay.iphone.position-absolute
+          .touch-overlay.hand.position-absolute

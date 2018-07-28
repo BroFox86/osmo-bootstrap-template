@@ -1,58 +1,55 @@
-doctype html
 include /pug/mixins
 
-//-
-//- <html> tag is deliberately omitted.
-//- Info here: google.github.io/styleguide/htmlcssguide.html#Optional_Tags
-//-
+doctype html
+html(lang="en")
 
-block head
-  head
-    meta(charset="utf-8")
-    title= title
-    meta(name="author" content="Daur Gamisonia, daurgam@gmail.com, Russia | Moscow")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(name="robots" content="noindex")
+  block head
+    head
+      meta(charset="utf-8")
+      title= title
+      meta(name="author" content="Daur Gamisonia, daurgam@gmail.com, Russia | Moscow")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      meta(name="robots" content="noindex")
 
-    // build:css css/styles.min.css
-    link(href="css/main.css" rel="stylesheet")
-    // endbuild 
-
-block page
-  body(lang="en")
-    <!--[if lte IE 10]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
-    <noscript>For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="https://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</noscript>
-
-    // inject:svg
-    // endinject
-
-    block header
-      include /assets/includes/header
-      +header
-
-    block content
-
-    block footer
-      include /assets/includes/footer
-
-    block scripts
-      // build:js js/objectFitPolyfill.basic.min.js
-      script(src="js/objectFitPolyfill.basic.min.js")
+      // build:css css/styles.min.css
+      link(href="css/main.css" rel="stylesheet")
       // endbuild 
 
-      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  block page
+    body
+      <!--[if lte IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
 
-      // build:js js/global.min.js
-      script(src="js/index.js")
-      script(src="js/util.js")
-      script(src="js/modal.js")
-      script(src="js/tab.js")
-      script(src="js/custom.js")
-      // endbuild 
+      <noscript>For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="https://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</noscript>
 
-      // build:remove 
-      script(src="js/_viewport.js")
-      // endbuild 
+      // inject:svg
+      // endinject
+
+      block header
+        include /assets/includes/header
+        +header
+
+      block content
+
+      block footer
+        include /assets/includes/footer
+
+      block scripts
+        // build:js js/objectFitPolyfill.basic.min.js
+        script(src="js/objectFitPolyfill.basic.min.js")
+        // endbuild 
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+
+        // build:js js/global.min.js
+        script(src="js/index.js")
+        script(src="js/util.js")
+        script(src="js/modal.js")
+        script(src="js/tab.js")
+        script(src="js/custom.js")
+        // endbuild 
+
+        // build:remove 
+        script(src="js/_viewport.js")
+        // endbuild 
