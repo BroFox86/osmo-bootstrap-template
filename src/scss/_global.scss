@@ -18,8 +18,8 @@ body {
   }
 }
 
-h2 {
+h2, .h2 {
   @include media-breakpoint-up(sm) {
-    font-size: 37px;
+    font-size: 40px;
   }
 }
