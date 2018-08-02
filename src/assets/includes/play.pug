@@ -18,14 +18,11 @@
           .play-tab-inner.position-relative
             h2.pb-2.text-white Now you can play with your hands
             p Put your iPad in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
-
-          - className = "play-img position-absolute"
-          - src       = "images/play-on-ipad-responsive.png"
-          - width     = 700
-          - sizes     = "(min-width: 768px) 43.75rem, 95vw"
-          - alt       = "Play Osmo on iPad"
-          +respImg
-
+          +respImg("images/play-on-ipad-responsive.png", 700)(
+            class="play-img position-absolute", 
+            sizes="(min-width: 768px) 43.75rem, 95vw", 
+            alt="Play Osmo on iPad"
+          )
           .play-overlay.ipad.position-absolute
           .play-overlay.hand.position-absolute
 
@@ -33,10 +30,10 @@
           .play-tab-inner.position-relative
             h2.pb-2.text-white Osmo is now on iPhone
             p Put your iPhone in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
-
-          - src = "images/play-on-iphone-responsive.png"
-          - alt = "Play Osmo on iPhone"
-          +respImg
-
+          +respImg("images/play-on-iphone-responsive.png", 700)(
+            class="play-img position-absolute", 
+            sizes="(min-width: 768px) 43.75rem, 95vw", 
+            alt="Play Osmo on iPhone"
+          )
           .play-overlay.iphone.position-absolute
           .play-overlay.hand.position-absolute

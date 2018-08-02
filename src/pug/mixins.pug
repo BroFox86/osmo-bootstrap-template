@@ -1,28 +1,21 @@
-//- ==========================================================================
 //- Responsive image
-//- ==========================================================================
-
-mixin respImg
+mixin respImg(src, width)
   - var src1 = src + " " + width + "w"
   - var src2 = src.replace(/(\.[\w\d_-]+)$/i, "@1\.5x$1") + " " + width * 1.5 + "w"
   - var src3 = src.replace(/(\.[\w\d_-]+)$/i, "@2x$1")  + " " + width * 2   + "w"
 
-  img(
-    class  = className
-    srcset = src1 + ", " + src2 + ", " + src3
-    sizes  = width / 16 + "rem"
-    src	   = src
-    alt	   = "")
+  img(class  = attributes.class
+      srcset = src1 + ", " + src2 + ", " + src3
+      sizes  = attributes.sizes
+      src    = src
+      alt    = attributes.alt)
 
-//- ==========================================================================
 //- Video
-//- ==========================================================================
-
 mixin video(filename, attr)
 
   video(poster="images/" + filename + ".jpg", preload="none", loop, muted, playsinline)&attributes(attributes)= attr
 
-    source(src= "videos/" + filename + ".webm", type="video/webm")
-    source(src= "videos/" + filename + ".mp4", type="video/mp4")
+    source(src="videos/" + filename + ".webm", type="video/webm")
+    source(src="videos/" + filename + ".mp4", type="video/mp4")
     | Video is not supported by your browser.
-    a(href= "videos/" + filename + ".mp4") Download this video
+    a(href="videos/" + filename + ".mp4") Download this video
