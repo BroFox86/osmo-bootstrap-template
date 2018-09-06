@@ -12,70 +12,61 @@
    ========================================================================== */
 
 (function() {
-
-  var toggle   = "[data-toggle='nestedList']",
-      target   = "[data-target='nestedList']",
+  var toggle   = "[data-toggle='gameList']",
+      target   = "[data-target='gameList']",
+      wrapper  = "[data-translate='gameList']",
       $body    = $("body"),
       duration = 360;
-  
+
     function click() {
       $(target)
-        .css("height", "auto");
-      $(toggle)
-        .toggleClass("is-expanded");
-      $(target)
+        .css("height", "auto")
         .slideToggle(duration);
     }
-  
+
     function mouseenter() {
-      $(toggle)
-        .addClass("is-expanded");
       $(target)
+        .css("height", "")
         .stop()
         .slideDown(duration);
-      $(target + " ul")
+      $(wrapper)
         .stop()
         .animate({ top: "25px" }, duration);
     }
-  
+
     function mouseleave() {
-      $(toggle)
-        .removeClass("is-expanded");
       $(target)
         .stop()
         .slideUp(duration);
-      $(target + " ul")
+      $(wrapper)
         .stop()
         .animate({ top: "0" }, duration);
     }
-  
-    var height,
-        executed = false,
-        executedDesktop = false;
+
+    var mobile = window.matchMedia("(max-width: 768px)"),
+        desktop = window.matchMedia("(min-width: 769px)"),
+        isThrottledMobile = false,
+        isThrottledDesktop = false;
   
     $(window).on("DOMContentLoaded resize", function() {
-      height = $(target).innerHeight;
-      $(target).css("height", height);
-  
-      if (window.matchMedia("(max-width: 768px)").matches 
-          && executed == false) {
+      if (mobile.matches && isThrottledMobile == false) {
         $body
           .on("click", toggle, click)
           .off("mouseenter", toggle, mouseenter)
           .off("mouseleave", toggle, mouseleave);
 
-        executed = true;
-        executedDesktop = false;
-  
-      } else if (window.matchMedia("(min-width: 769px)").matches 
-                 && executedDesktop == false) {
+        isThrottledMobile = true;
+        isThrottledDesktop = false;
+      } 
+
+      if (desktop.matches && isThrottledDesktop == false) {
         $body
           .off("click", toggle, click)
           .on("mouseenter", toggle, mouseenter)
           .on("mouseleave", toggle, mouseleave);
 
-        executedDesktop = true;
-        executed = false;
+        isThrottledDesktop = true;
+        isThrottledMobile = false;
       }
     });
 }) ()
