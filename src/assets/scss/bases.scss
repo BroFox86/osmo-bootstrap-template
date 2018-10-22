@@ -6,14 +6,14 @@
     font-size: 26px;
   }
 
-  &-devices {
+  .devices {
     @include media-breakpoint-up(md) {
       width: 47px;
       height: 47px;
     }
   }
 
-  &-btn {
+  .btn {
     color: white;
     border: 1px solid white;
 
@@ -23,7 +23,7 @@
     }
   }
 
-  .bases-btn:hover svg {
+  .btn:hover .icon {
     fill: #c24dd9;
   }
 }

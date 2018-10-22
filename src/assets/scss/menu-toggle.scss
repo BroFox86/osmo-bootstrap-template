@@ -1,8 +1,8 @@
-.hamburger {
+.menu-toggle {
   width: 16px;
   cursor: pointer;
 
-  &-bar {
+  .bar {
     width: 100%;
     height: 2px;
     margin-top: 3px;
@@ -22,16 +22,16 @@
     }
   }
 
-  &.is-expanded .hamburger-bar:nth-child(1) {
+  &.is-expanded .bar:nth-child(1) {
     transform: rotate(45deg);
     transform-origin: 5% 5%;
   }
 
-  &.is-expanded .hamburger-bar:nth-child(2) {
+  &.is-expanded .bar:nth-child(2) {
     opacity: 0;
   }
 
-  &.is-expanded .hamburger-bar:nth-child(3) {
+  &.is-expanded .bar:nth-child(3) {
     transform: rotate(-45deg);
     transform-origin: 0 100%;
   }

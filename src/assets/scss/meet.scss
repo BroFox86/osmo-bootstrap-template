@@ -13,12 +13,12 @@
     background-image: url("../images/girl-playing-table-wide-responsive.jpg");
   }
 
-  @media (min-width: $sm) and (min-resolution: 1.5dppx), 
+  @media (min-width: $sm) and (min-resolution: 1.5dppx),
          (min-width: $sm) and (-webkit-min-device-pixel-ratio: 1.5) {
     background-image: url("../images/girl-playing-table-wide-responsive@1.5x.jpg");
   }
 
-  @media (min-width: $sm) and (min-resolution: 2dppx), 
+  @media (min-width: $sm) and (min-resolution: 2dppx),
          (min-width: $sm) and (-webkit-min-device-pixel-ratio: 2) {
     background-image: url("../images/girl-playing-table-wide-responsive@2x.jpg");
   }
@@ -30,7 +30,7 @@
     background-size: auto 100%;
   }
 
-  &-desc {
+  p {
     width: 100%;
 
     @include media-breakpoint-up(sm) {
@@ -42,12 +42,12 @@
     }
   }
 
-  &-find {
+  .find {
     color: #777;
     line-height: 1;
+  }
 
-    &:hover {
-      color: #777;
-    }
+  .find a {
+    color: inherit;
   }
 }

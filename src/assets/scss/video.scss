@@ -1,4 +1,4 @@
-.video {
+.video-wrapper {
   overflow: hidden;
   width: 100%;
   height: 85vw;
@@ -7,14 +7,14 @@
     height: 500px;
   }
 
-  &-stream {
-    display: none; 
+  .video {
+    display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &-btn {
+  .btn {
     width: 110px;
     height: 110px;
   }

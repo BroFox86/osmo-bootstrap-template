@@ -1,7 +1,7 @@
 .coding {
   font-size: $font-size-sm;
 
-  &-video {
+  .video {
     width: 100%;
     height: 307px;
     object-fit: contain;
@@ -11,7 +11,7 @@
     }
   }
 
-  &-icon {
+  .icon {
     top: 0;
     bottom: 0;
     width: 40px;
@@ -34,16 +34,16 @@
     }
   }
 
-  &-icon.mindracers { background-position: $mindracers; }
-  &-icon.tangram { background-position: $tangram; }
-  &-icon.pizzaco { background-position: $pizzaco; }
-  &-icon.monster { background-position: $monster; }
-  &-icon.numbers { background-position: $numbers; }
-  &-icon.masterpiece { background-position: $masterpiece; }
-  &-icon.words { background-position: $words; }
-  &-icon.newton { background-position: $newton; }
+  .icon.mindracers { background-position: $mindracers; }
+  .icon.tangram { background-position: $tangram; }
+  .icon.pizzaco { background-position: $pizzaco; }
+  .icon.monster { background-position: $monster; }
+  .icon.numbers { background-position: $numbers; }
+  .icon.masterpiece { background-position: $masterpiece; }
+  .icon.words { background-position: $words; }
+  .icon.newton { background-position: $newton; }
 
-  &-heading-text {
+  .heading-text {
     margin-left: 50px;
 
     @include media-breakpoint-up(lg) {
@@ -51,11 +51,11 @@
     }
   }
 
-  &-par {
+  p {
     font-size: $font-size-sm;
   }
 
-  &-img-title {
+  .img-title {
     width: 100%;
     max-width: 300px;
 
@@ -64,11 +64,11 @@
     }
   }
 
-  &-devices {
+  .devices {
     font-size: $font-size-sm;
   }
 
-  &-btn {
+  .btn {
     color: #22a2d1;
     border: 1px solid #22a2d1;
 
@@ -78,7 +78,7 @@
     }
   }
 
-  &-btn:hover svg {
+  .btn:hover svg {
     fill: white;
   }
 }

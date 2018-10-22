@@ -1,18 +1,18 @@
 .awards {
   background: #f4f7fc;
 
-  &-container {
+  .container {
     @include media-breakpoint-up(xl) {
       width: 1140px;
     }
   }
 
-  &-img {
+  img {
     width: 100%;
     max-width: 450px;
   }
 
-  &-logo {
+  .logo {
     display: block;
     background: url("../images/award-logos.png") 0 0 / 100px 72px no-repeat;
 
@@ -41,7 +41,7 @@
     }
   }
 
-  &-year {
+  .year {
     font-size: $font-size-sm;
   }
 }

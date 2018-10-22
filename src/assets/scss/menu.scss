@@ -7,7 +7,7 @@
     }
   }
 
-  &-shop {
+  .shop {
     flex-shrink: 0;
     padding: 9px;
     transition: transform .15s linear;
@@ -33,7 +33,7 @@
     }
   }
 
-  &-list-wrapper {
+  .list-wrapper {
     position: fixed;
     z-index: 99;
     top: 56px;
@@ -60,7 +60,7 @@
     }
   }
 
-  &-link {
+  .nav-link {
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -78,27 +78,27 @@
         fill: currentColor;
       }
     }
+  }
 
-    .menu-popup-item:hover > & {
-      @include media-breakpoint-up(md) {
-        color: $cyan;
-      }
-    }
-    
-    .menu-game-list & {
-      color: white;
-
-      @include media-breakpoint-up(xl) {
-        font-size: 1rem; 
-      }
+  .popup-item > .nav-link:hover {
+    @include media-breakpoint-up(md) {
+      color: $cyan;
     }
   }
 
-  &-item-image {
+  .game-list .nav-link {
+    color: white;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1rem;
+    }
+  }
+
+  .image-item {
     top: 2px;
   }
 
-  &-arrow-wrapper {
+  .arrow-wrapper {
     @include media-breakpoint-up(md) {
       position: absolute;
       bottom: -25px;
@@ -109,7 +109,7 @@
     }
   }
 
-  &-arrow {
+  .arrow {
     fill: white;
     transition: fill .3s;
 
@@ -118,15 +118,15 @@
       transform: rotate(0);
       @include x-center();
     }
+  }
 
-    .menu-popup-item:hover & {
-      @include media-breakpoint-up(md) {
-        fill: $cyan;
-      }
+  .popup-item:hover .arrow {
+    @include media-breakpoint-up(md) {
+      fill: $cyan;
     }
   }
 
-  &-game-list {
+  .game-list {
     display: none;
 
     @include media-breakpoint-up(md) {
@@ -147,7 +147,7 @@
     }
   }
 
-  &-game {
+  .game {
     flex-shrink: 0;
     width: 36px;
     height: 36px;

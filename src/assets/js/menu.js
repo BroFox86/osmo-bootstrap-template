@@ -5,7 +5,7 @@
    $("[data-toggle='menuToggler']").click(function() {
     $(this).toggleClass("is-expanded");
     $("[data-target='navList']").toggleClass("is-visible");
-  });  
+  });
 
 /* ==========================================================================
    Nested list toggler
@@ -47,7 +47,7 @@
         desktop = window.matchMedia("(min-width: 769px)"),
         isThrottledMobile = false,
         isThrottledDesktop = false;
-  
+
     $(window).on("DOMContentLoaded resize", function() {
       if (mobile.matches && isThrottledMobile == false) {
         $body
@@ -57,7 +57,7 @@
 
         isThrottledMobile = true;
         isThrottledDesktop = false;
-      } 
+      }
 
       if (desktop.matches && isThrottledDesktop == false) {
         $body
@@ -68,5 +68,10 @@
         isThrottledDesktop = true;
         isThrottledMobile = false;
       }
+
+      // Prevent text selection
+      $(toggle).on("mousedown", function(e) {
+        e.preventDefault();
+      });
     });
 }) ()

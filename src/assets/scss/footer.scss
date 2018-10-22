@@ -1,10 +1,8 @@
-.footer {
-  &-top {
-    background: #333;
-    font-size: 15px;
-  }
+.footer-top {
+  background: #333;
+  font-size: 15px;
 
-  &-nav-link {
+  .nav-link {
     color: $gray-600;
 
     &:hover {
@@ -12,7 +10,7 @@
     }
   }
 
-  &-flag {
+  .flag {
     display: inline-block;
     width: 20px;
     height: 11px;
@@ -20,17 +18,17 @@
     background-repeat: no-repeat;
   }
 
-  &-form-desc {
+  p {
     width: 300px;
     color: $gray-500;
     font-family: $font-family-system;
   }
 
-  &-form-email {
+  form {
     font-size: 13px;
   }
 
-  &-form-input {
+  input {
     width: 100%;
     padding: 10px 100px 10px 20px;
     border: none;
@@ -45,7 +43,7 @@
     }
   }
 
-  &-form-btn {
+  .form-btn {
     right: -1px;
     height: 100%;
     padding: 10px 20px;
@@ -55,7 +53,7 @@
     @include x-btn($background-color: $orange);
   }
 
-  &-social {
+  .social {
     width: 42px;
     height: 42px;
 
@@ -63,14 +61,14 @@
       filter: brightness(130%);
     }
   }
+}
 
-  &-bottom {
-    background: #373737;
-    font-family: $font-family-system;
-    font-size: 15px;
-  }
+.footer-bottom {
+  background: #373737;
+  font-family: $font-family-system;
+  font-size: 15px;
 
-  &-bottom-link {
+  .nav-link {
     color: #727272;
     font-family: $font-family-system;
 
@@ -79,7 +77,7 @@
     }
   }
 
-  &-bottom-caption {
+  .caption {
     color: $gray-500;
     font-size: 12px;
   }
