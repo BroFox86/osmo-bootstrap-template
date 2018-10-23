@@ -16,12 +16,12 @@
   width : 202px;
   padding-top : 20px;
   padding-bottom : 20px;
-  transition : transform .3s ease-in-out;
   border-radius : 30px;
   background : linear-gradient(to right, lighten($orange,7), darken($orange,0));
   font-size : 20px;
   font-weight: 600;
   color: white;
+  transition : transform .2s ease-in-out;
 
   &:hover {
     color: white;
@@ -30,10 +30,10 @@
 }
 
 .x-btn-play {
-  transition: transform .3s ease-in-out;
   border: 3px solid white;
   border-radius: 50%;
   background: rgba($color: #000, $alpha: .4);
+  transition: transform .2s ease-in-out;
 
   @include x-center();
 
