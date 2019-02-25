@@ -31,7 +31,7 @@
         .slideDown(duration);
       $(wrapper)
         .stop()
-        .animate({ top: "25px" }, duration);
+        .animate({ top: "0px" }, duration);
     }
 
     function mouseleave() {
