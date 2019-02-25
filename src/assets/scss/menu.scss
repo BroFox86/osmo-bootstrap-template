@@ -153,7 +153,7 @@
     height: 36px;
     margin-right: 16px;
     border-radius: 22%;
-    background: url("../images/game-icons-responsive.jpg") 0 0 / 475% 350% no-repeat;
+    background: url("../images/game-icons-responsive.jpeg") 0 0 / 475% 350% no-repeat;
     transition: transform .2s ease-out;
 
     &:hover {
@@ -161,11 +161,11 @@
     }
 
     @media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
-      background-image: url("../images/game-icons-responsive@1.5x.jpg");
+      background-image: url("../images/game-icons-responsive@1.5x.jpeg");
     }
 
     @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url("../images/game-icons-responsive@2x.jpg");
+      background-image: url("../images/game-icons-responsive@2x.jpeg");
     }
 
     @include media-breakpoint-up(md) {

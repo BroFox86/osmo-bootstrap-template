@@ -14,7 +14,7 @@ mixin respImg(src, width)
 
 //- Video
 mixin video(filename, attr)
-  video(poster="images/" + filename + ".jpg", preload="none", loop, muted, playsinline)&attributes(attributes)= attr
+  video(poster="images/" + filename + ".jpeg", preload="none", loop, muted, playsinline)&attributes(attributes)= attr
     source(src="videos/" + filename + ".webm", type="video/webm")
     source(src="videos/" + filename + ".mp4", type="video/mp4")
     | Video is not supported by your browser.
