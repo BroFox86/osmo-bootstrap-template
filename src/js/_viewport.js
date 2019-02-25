@@ -1,31 +1,60 @@
-(function(){
-  "use strict";
+"use strict";
 
-  var scrollbar = 15,
-      viewportwidth, viewportheight;
+/**
+ * Display viewport size on the screen.
+ * @class
+ * @param {string[]} styles - Array of styles that add to the indicator.
+ * @author Daur Gamisonia <daurgam@gmail.com>
+ * @example
+ * var displayViewportSize = new ViewportIndicator([
+ *   "position: fixed",
+ *   "bottom: 0"
+ * ]);
+*/
+function ViewportIndicator( styles ) {
+  var stylesStr = "",
+    indicator;
 
-  if (typeof window.innerWidth != "undefined") {
-    viewportwidth  = window.innerWidth; 
-    viewportheight = window.innerHeight;
+  // Generate styles string
+  for ( var i = 0; i < styles.length; i++ ) {
+    stylesStr += styles[i] + ";"
   }
 
-  $("body").append(
-    '<p id="viewport">' + (viewportwidth - scrollbar) + "x" + viewportheight + "</p>"
-  );
+  /*
+   * Generate indicator and append it to body.
+   */
+  (function generate() {
 
-  $(window).resize(function() {
-    if (typeof window.innerWidth != "undefined") {
-      viewportwidth  = window.innerWidth;
-      viewportheight = window.innerHeight;
-    }
-    $("#viewport").html( (viewportwidth - scrollbar) + "x" + viewportheight);
-  });
+    indicator = document.createElement("div");
 
-  $("#viewport").css({
-    position: "fixed",
-    bottom: "0",
-    left: "1%",
-    "z-index": "9999",
-    color: "blue"
+    indicator.id = "viewportIndicator";
+
+    indicator.style.cssText = stylesStr;
+
+    document.body.appendChild( indicator );
+  })();
+
+  /*
+   * Calculate viewport sizes of the page and insert the value to the indicator.
+   */
+  function display() {
+    var scrollbar = window.innerWidth - document.documentElement.clientWidth,
+      width = window.innerWidth,
+      height = window.innerHeight;
+
+    indicator.innerHTML = (width - scrollbar) + "x" + height;
+  }
+
+  [ "DOMContentLoaded", "resize" ].forEach(function( item ) {
+    window.addEventListener( item, display );
   });
-})()
+};
+
+var viewportIndicator = new ViewportIndicator([
+  "position: fixed",
+  "bottom: 0",
+  "left: 1%",
+  "z-index: 9999",
+  "background: white",
+  "color: blue"
+]);
