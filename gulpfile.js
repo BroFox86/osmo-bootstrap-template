@@ -414,9 +414,9 @@ gulp.task("watch", function() {
 
   watch(
     [
-      "src/layouts/*.*",
-      "src/pug/**/*",
-      "src/includes/*.pug",
+      "src/layouts/**",
+      "src/pug/**",
+      "src/components/*/*.pug",
       "src/*.pug"
     ],
     { readDelay: 200 },
@@ -428,7 +428,7 @@ gulp.task("watch", function() {
   watch(
     [
       "src/scss/*.scss",
-      "src/scss/**"
+      "src/components/*/*.scss"
     ],
     { readDelay: 200 },
     function() {
