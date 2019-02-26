@@ -1,0 +1,18 @@
+extends /layouts/layout
+
+prepend head
+  - var title = "Osmo Bootstrap template"
+
+block content
+  .position-relative
+    include components/*/video
+    include components/*/aging
+    
+  include components/*/meet
+  include components/*/play
+  include components/*/coding
+  include components/*/awards
+  include components/*/schools
+  include components/*/bases
+  include components/*/order
+  include components/*/conditions
