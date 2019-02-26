@@ -1,7 +1,7 @@
 mixin nav
   nav.navbar.navbar-expand-md.menu.position-fixed.fixed-top.shadow-sm.p-md-3
     .container.menu-container
-      .menu-toggle.d-md-none(data-toggle="menuToggler")
+      .menu-toggle.d-md-none(data-toggle="nav")
         .bar
         .bar
         .bar
@@ -12,7 +12,7 @@ mixin nav
         | Shop 
         span.d-none.d-md-inline now
 
-      .list-wrapper.order-md-2(data-target="navList")
+      .list-wrapper.order-md-2(data-target="nav")
         ul.navbar-nav.mb-5.py-4.pl-4.m-md-0.p-md-0
           li.nav-item.popup-item.mr-md-4(data-toggle="gameList")
             .nav-link.position-relative.d-inline-block
@@ -20,8 +20,8 @@ mixin nav
               .arrow-wrapper.d-inline-block.ml-2.m-md-auto
                 svg.arrow.align-middle(width="14" height="14")
                   use(xlink:href="#arrow-down")
-            .game-list(data-target="gameList")
-              ul.navbar-nav.position-relative.flex-md-row.justify-content-around.justify-content-lg-center.py-4(data-translate="gameList")
+            .game-list(data-target="gameList")  
+              ul.inner-list.navbar-nav.position-relative.flex-md-row.justify-content-around.justify-content-lg-center.py-4(data-inner="gameList")
                 li.mr-lg-5
                   a.nav-link.d-flex.flex-md-column.align-items-center.p-md-0.font-weight-light(href="#")
                     span.game.mindracers.d-block.mb-md-3

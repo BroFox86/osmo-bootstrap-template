@@ -147,6 +147,19 @@
     }
   }
 
+  .inner-list {
+    @include media-breakpoint-up(md) {
+      transform: translateY(-100%);
+      transition: transform .35s ease-out;
+    }
+
+    &.is-visible {
+      @include media-breakpoint-up(md) {
+        transform: translateY(0);
+      }
+    }
+  }
+
   .game {
     flex-shrink: 0;
     width: 36px;
