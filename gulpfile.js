@@ -414,7 +414,6 @@ gulp.task("watch", function() {
 
   watch(
     [
-      "src/layouts/**",
       "src/pug/**",
       "src/components/*/*.pug",
       "src/*.pug"
