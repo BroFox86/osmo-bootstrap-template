@@ -7,10 +7,10 @@ Manually re-created Osmo shop homepage from the [original one](https://www.playo
 * Based on Bootstrap 4.1
 * Responsive/Adaptive design
 * Responsive images via HTML5 attributes and CSS3 media queries
-* PostCSS plugins: Autoprefixer, UnCSS and PX to REM converter 
+* PostCSS plugins: Autoprefixer, UnCSS and PX to REM converter
 * Play/pause videos depending on their position on the screen
-* SVG sprite injected in to HTML markup
-* Gotham font was replaced by the free alternative Montserrat
+* SVG sprite injected into HTML markup
+* Gotham font was replaced by free alternative Montserrat
 
 ## Approach
 
@@ -22,7 +22,7 @@ I tried to follow the same code style and approach that is [recommended](https:/
 > * Whenever possible, use utilities over custom styles
 > * Whenever possible, avoid enforcing strict HTML requirements (children selectors)
 
-Some other guides and approaches which i followed anyway:
+Some other guides and approaches which I followed anyway:
 
 * “6 Gulp Best Practices” by [Cosmin](http://blog.rangle.io/angular-gulp-bestpractices/)
 * “HTML/CSS Style Guide” by [Google](https://google.github.io/styleguide/htmlcssguide.html)
@@ -31,7 +31,7 @@ Some other guides and approaches which i followed anyway:
 ## Google PSI
 
 [This](https://brofox86.github.io/osmo-bootstrap-template/) template: <br>
-Mobile: 92/100 | Desktop: 81/100
+Mobile: 99/100 | Desktop: 81/100
 <br><br>
 [Original](https://www.playosmo.com/en/) website: <br>
 Mobile: 88/100 | Desktop: 56/100
