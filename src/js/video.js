@@ -3,9 +3,9 @@
 /*
  * Play main video when page load
  */
-$( window ).on("load", function() {
+window.addEventListener("load", function() {
   $("[data-toggle='mainVideo']").get( 0 ).play();
-});
+})
 
 /*
  * Play/pause videos depending on their position on a screen
