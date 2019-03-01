@@ -186,21 +186,14 @@ gulp.task("scripts:plugins", function() {
 
 gulp.task("scripts:common", function() {
   return gulp
-    .src("src/js/**/*.js")
-    .pipe(gulp.dest(".tmp/js/"));
-});
-
-gulp.task("scripts:assets", function() {
-  return gulp
     .src("src/js/*.js")
-    .pipe(plugins.concat("custom.js"))
     .pipe(gulp.dest(".tmp/js/"));
 });
 
 gulp.task("scripts:prebuild", function(cb) {
   plugins.sequence(
     ["scripts:plugins"],
-    ["scripts:common", "scripts:assets"]
+    ["scripts:common"]
   )(cb);
 });
 
