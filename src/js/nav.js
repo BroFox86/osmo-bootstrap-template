@@ -19,8 +19,8 @@
     target = "[data-target='gameList']",
     inner = "[data-inner='gameList']",
     duration = 300,
-    isDesktopExec,
-    isMobileExec;
+    isDesktop,
+    isMobile;
 
   function click() {
     $( target ).css( "height", "auto" ).slideToggle( duration );
@@ -49,28 +49,28 @@
     var pageWidth = document.documentElement.clientWidth,
       desktopWidth = 768;
 
-    if ( pageWidth < desktopWidth && !isMobileExec ) {
+    if ( pageWidth < desktopWidth && !isMobile ) {
 
       $body
         .on( "click", toggle, click )
         .off( "mouseenter", toggle, mouseenter )
         .off( "mouseleave", toggle, mouseleave );
 
-      isDesktopExec = false;
+      isMobile = true;
 
-      isMobileExec = true;
+      isDesktop = false;
     };
 
-    if ( pageWidth >= desktopWidth && !isDesktopExec ) {
+    if ( pageWidth >= desktopWidth && !isDesktop ) {
 
       $body
         .off( "click", toggle, click )
         .on( "mouseenter", toggle, mouseenter )
         .on( "mouseleave", toggle, mouseleave );
 
-      isDesktopExec = true;
+      isMobile = false;
 
-      isMobileExec = false;
+      isDesktop = true;
     };
   };
 
