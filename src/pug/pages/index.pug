@@ -1,0 +1,18 @@
+extends /pug/layouts/_page
+
+prepend head
+  - var title = "Osmo Bootstrap template"
+
+block content
+  .position-relative
+    include /pug/components/_video 
+    include /pug/components/_aging 
+    
+  include /pug/components/_meet
+  include /pug/components/_play
+  include /pug/components/_coding
+  include /pug/components/_awards
+  include /pug/components/_schools
+  include /pug/components/_bases
+  include /pug/components/_order
+  include /pug/components/_conditions

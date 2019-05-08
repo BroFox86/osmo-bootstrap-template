@@ -1,0 +1,40 @@
+include /pug/abstracts/_mixins
+include /pug/layouts/_nav
+
+doctype html
+html(lang="en")
+
+  block head
+    head
+      meta(charset="utf-8")
+      title= title
+      meta(name="author" content="Daur Gamisonia, daurgam@gmail.com, Russia | Moscow")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      meta(name="robots" content="noindex")
+      link(href="css/main.css" rel="stylesheet")
+
+  block page
+    body
+      block nav
+        +nav
+
+      block content
+
+      block footer
+        include /pug/layouts/_footer
+
+      block scripts
+        script(src="js/objectFitPolyfill.basic.min.js")
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="js/index.js")
+        script(src="js/util.js")
+        script(src="js/modal.js")
+        script(src="js/tab.js")
+        script(src="js/nav.js")
+        script(src="js/shop-btn.js")
+        script(src="js/video.js")
+
+        //build:remove
+        script(src="js/_viewport.js")
+        //endbuild

@@ -1,0 +1,32 @@
+// Update Bootstrap variables
+// ==========================================================================
+$body-color: $gray-700;
+$link-color: $cyan;
+
+$font-family-base: "Montserrat", sans-serif;
+$font-family-system: $font-family-sans-serif;
+$font-weight-base: 300;
+
+$headings-color: #373737;
+$headings-margin-bottom: 15px;
+$headings-font-weight: 600;
+
+// Media breakpoints
+// ==========================================================================
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xs: 1200px;
+
+// Icon positions in the sprite image
+// ==========================================================================
+$mindracers:    33.33333333% 100%;
+$codingjam:     0 100%;
+$codingawbie:   33.33333333% 50%;
+$tangram:       0 0;
+$pizzaco:       100% 50%;
+$monster:       66.66666667% 50%;
+$numbers:       0 50%;
+$masterpiece:   100% 0;
+$words:         33.33333333% 0;
+$newton:        66.66666667% 0;

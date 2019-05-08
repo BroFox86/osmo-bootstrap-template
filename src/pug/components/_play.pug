@@ -1,0 +1,39 @@
+.play
+  nav.container.d-flex.flex-column.align-items-center
+    .wrapper.position-relative
+      ul.nav.nav-tabs.position-relative.mb-4.border-0
+        li.nav-item.mr-4
+          a.link.active(href="#tablet" data-toggle="tab")
+            svg.icon.mr-2.align-middle(width="20" height="20" fill="white")
+              use(xlink:href="images/icons.svg#ipad")
+            span iPad
+        li.nav-item
+          a.link(href="#mobile" data-toggle="tab")
+            svg.icon.mr-2.align-middle(width="20" height="20" fill="white")
+              use(xlink:href="images/icons.svg#iphone")
+            span iPhone
+
+      .tab-content.tab-content
+        .tab-pane.fade.show.active.text-white#tablet
+          .tab-inner.position-relative
+            h2.pb-2.text-white Now you can play with your hands
+            p Put your iPad in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
+          +respImg("images/play-on-ipad.png", 700)(
+            class="position-absolute", 
+            sizes="(min-width: 768px) 43.75rem, 95vw", 
+            alt="Play Osmo on iPad"
+          )
+          .overlay.ipad.position-absolute
+          .overlay.hand.position-absolute
+
+        .tab-pane.fade.text-white#mobile
+          .tab-inner.position-relative
+            h2.pb-2.text-white Osmo is now on iPhone
+            p Put your iPhone in the Osmo base with the red reflector over the camera — and now it can see what’s in front of it.
+          +respImg("images/play-on-iphone.png", 700)(
+            class="position-absolute", 
+            sizes="(min-width: 768px) 43.75rem, 95vw", 
+            alt="Play Osmo on iPhone"
+          )
+          .overlay.iphone.position-absolute
+          .overlay.hand.position-absolute

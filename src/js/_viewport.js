@@ -1,60 +1,69 @@
 "use strict";
 
 /**
- * Display viewport size on the screen.
+ * Display viewport size of the page.
  * @class
- * @param {string[]} styles - Array of styles that add to the indicator.
+ * @param {string[]} styles - Array of styles.
  * @author Daur Gamisonia <daurgam@gmail.com>
+ * @version 1.0.6
  * @example
- * var displayViewportSize = new ViewportIndicator([
+ * var displayViewportSize = new Viewport([
  *   "position: fixed",
  *   "bottom: 0"
  * ]);
 */
 function ViewportIndicator( styles ) {
-  var stylesStr = "",
-    indicator;
+  var cssText = "";
+  var indicator;
 
-  // Generate styles string
-  for ( var i = 0; i < styles.length; i++ ) {
-    stylesStr += styles[i] + ";"
-  }
+  (function generateCssText() {
+    for ( var i = 0; i < styles.length; i++ ) {
+      cssText += styles[i] + ";"
+    }
+  })();
 
-  /*
-   * Generate indicator and append it to body.
-   */
-  (function generate() {
-
+  (function generateIndicator() {
     indicator = document.createElement("div");
 
-    indicator.id = "viewportIndicator";
+    indicator.id = "viewport";
 
-    indicator.style.cssText = stylesStr;
+    indicator.style.cssText = cssText;
 
     document.body.appendChild( indicator );
   })();
 
-  /*
-   * Calculate viewport sizes of the page and insert the value to the indicator.
-   */
   function display() {
-    var scrollbar = window.innerWidth - document.documentElement.clientWidth,
-      width = window.innerWidth,
-      height = window.innerHeight;
+    var userAgent = window.navigator.userAgent;
+    var viewportWidth;
+    var viewportHeight;
 
-    indicator.innerHTML = (width - scrollbar) + "x" + height;
+    if ( userAgent.match(/Chrome|Firefox|Opera|Edge|Trident/) ) {
+      viewportWidth = window.innerWidth;
+      viewportHeight = window.innerHeight;
+
+    } else if ( userAgent.match(/Safari/) ) {
+      // Safari doesn't include scrollbar into viewport size.
+      viewportWidth = document.documentElement.clientWidth;
+      viewportHeight = document.documentElement.clientHeight;
+
+    } else {
+      viewportWidth = window.innerWidth;
+      viewportHeight = window.innerHeight;
+    }
+
+    indicator.textContent = viewportWidth + "x" + viewportHeight;
   }
 
-  [ "DOMContentLoaded", "resize" ].forEach(function( item ) {
+  ["DOMContentLoaded", "resize"].forEach(function( item ) {
     window.addEventListener( item, display );
   });
-};
+}
 
-var viewportIndicator = new ViewportIndicator([
+var viewport = new ViewportIndicator([
   "position: fixed",
+  "z-index: 9999",
   "bottom: 0",
   "left: 1%",
-  "z-index: 9999",
   "background: white",
   "color: blue"
 ]);

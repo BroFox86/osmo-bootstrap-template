@@ -1,0 +1,13 @@
+.video-wrapper
+  +video("main-video")(class="video d-block", data-toggle="mainVideo", data-object-fit="cover")
+  button.btn.x-btn-play.video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain")
+    svg(width="35" height="35" fill="white")
+        use(xlink:href="images/icons.svg#play")
+
+//- .modal.fade(id="modalVideoMain")
+//-     .modal-dialog.modal-lg.modal-dialog-centered
+//-       .modal-content.border-0.bg-transparent
+//-         .modal-body
+//-           button.close.mb-2.text-white(type="button" data-dismiss="modal") &times;
+//-           .embed-responsive.embed-responsive-16by9
+//-             iframe.embed-responsive-item(src="https://www.youtube.com/embed/1JoIqEGuSlk?rel=0" allowfullscreen)

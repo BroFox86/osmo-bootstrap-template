@@ -1,0 +1,53 @@
+.meet {
+  padding-top: 40px;
+  padding-bottom: 70%;
+  background: url("../images/girl-playing-table.jpeg") bottom/contain no-repeat;
+
+  @include media-breakpoint-up(sm) {
+    padding-top: 60px;
+    padding-bottom: 20%;
+    background-size: cover;
+  }
+
+  @media (min-width: $sm) {
+    background-image: url("../images/girl-playing-table-wide.jpeg");
+  }
+
+  @media (min-width: $sm) and (min-resolution: 1.5dppx),
+         (min-width: $sm) and (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: url("../images/girl-playing-table-wide@1.5x.jpeg");
+  }
+
+  @media (min-width: $sm) and (min-resolution: 2dppx),
+         (min-width: $sm) and (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url("../images/girl-playing-table-wide@2x.jpeg");
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+    padding-bottom: 200px;
+    background-position: right;
+    background-size: auto 100%;
+  }
+
+  p {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 270px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 400px;
+    }
+  }
+
+  .find {
+    color: #777;
+    line-height: 1;
+  }
+
+  .find a {
+    color: inherit;
+  }
+}
