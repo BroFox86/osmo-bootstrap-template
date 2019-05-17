@@ -16,8 +16,8 @@
 @import "node_modules/bootstrap/scss/utilities";
 
 // User styles
-@import "abstracts/_mixins";
-@import "abstracts/_utilities";
-@import "base/_global";
-@import "base/_fonts";
+@import "abstracts/mixins";
+@import "abstracts/utilities";
+@import "base/global";
+@import "base/fonts";
 @import "components/*";
