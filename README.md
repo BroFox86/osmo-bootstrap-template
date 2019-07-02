@@ -7,7 +7,7 @@ Manually re-created Osmo shop homepage from the [original one](https://www.playo
 * Based on Bootstrap 4.1
 * Responsive/Adaptive design
 * Responsive images via HTML5 attributes and CSS3 media queries
-* PostCSS plugins: Autoprefixer, UnCSS and PX to REM converter
+* PostCSS plugins: Autoprefixer and UnCSS
 * Play/pause videos depending on their position on the screen
 * SVG sprite injected into HTML markup
 * Gotham font was replaced by free alternative Montserrat
