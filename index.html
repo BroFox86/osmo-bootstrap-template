@@ -119,10 +119,11 @@
     </nav>
     <div class="position-relative">
       <div class="video-wrapper">
-        <video class="video d-block" poster="images/main-video.jpeg" preload="none" loop="loop" muted="muted" playsinline="playsinline" data-toggle="mainVideo">
+        <video class="video d-none d-lg-block" poster="images/main-video.jpeg" preload="none" loop="loop" muted="muted" playsinline="playsinline" data-toggle="mainVideo">
           <source src="videos/main-video.webm" type="video/webm">
           <source src="videos/main-video.mp4" type="video/mp4">Video is not supported by your browser.<a href="videos/main-video.mp4">Download this video</a>
         </video>
+        <img class="video d-block d-lg-none" src="images/main-video.jpeg" alt="">
         <button class="btn x-btn-play video-btn" type="button" data-toggle="modal" data-target="#modalVideoMain">
           <svg width="35" height="35" fill="white">
             <use xlink:href="images/icons.svg#play"></use>
