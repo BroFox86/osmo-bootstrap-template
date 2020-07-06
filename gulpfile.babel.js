@@ -46,7 +46,6 @@ const paths = {
   plugins: {
     js: [
       "node_modules/bootstrap/js/dist/+(index|util|modal|tab).js",
-      "node_modules/objectFitPolyfill/dist/objectFitPolyfill.basic.min.js"
     ],
     css: [
       ""
@@ -77,8 +76,15 @@ const options = {
     errorOnUnusedImage: false,
     errorOnUnusedConfig: false,
     errorOnEnlargement: false,
-    quality: 80,
+    quality: 70,
+    compressionLevel: 6,
     silent: true
+  },
+  htmlBeautify: {
+    indent_size: 2,
+    indent_inner_html: true,
+    max_preserve_newlines: 1,
+    inline: ""
   }
 }
 /* ==========================================================================
@@ -95,10 +101,8 @@ export function watchFiles() {
   });
 
   watch([
-    "src/pug/[^pages]*/*"
+    "src/pug/**/*"
   ], generateHtml);
-
-  watch("src/pug/pages/*",generateIncrementalHtml);
 
   watch([
     "src/scss/**"
@@ -141,29 +145,9 @@ export function generateHtml() {
       })
       .on("error", plugins.notify.onError())
     )
-    .pipe(plugins.htmlBeautify({
-      indent_size: 4,
-      indent_inner_html: true
-    }))
+    .pipe(plugins.htmlBeautify(options.htmlBeautify))
     .pipe(dest(".tmp/"))
     .pipe(browserSync.stream())
-}
-
-export function generateIncrementalHtml() {
-  return src("src/pug/pages/*", {since: lastRun(generateIncrementalHtml)})
-    .pipe(
-      plugins.pug({
-        basedir: __dirname + "/src",
-        plugins: [pugIncludeGlob()]
-      })
-      .on("error", plugins.notify.onError())
-    )
-    .pipe(plugins.htmlBeautify({
-      indent_size: 4,
-      indent_inner_html: true
-    }))
-    .pipe(dest(".tmp/"))
-    .pipe(browserSync.stream());
 }
 
 export function buildHtml() {
@@ -275,7 +259,7 @@ export function copyScripts() {
 const prebuildScripts = series(copyPluginScripts, copyScripts);
 
 export function buildScripts() {
-  return src(".tmp/js/!(_*)")
+  return src("dist/js/*")
     .pipe(plugins.uglify())
     .pipe(dest("dist/js/"));
 }
@@ -299,9 +283,11 @@ export function optimiseImages() {
         imageminJpegRecompress({
           quality: options.jpegRecompress.quality
         }),
-        imageminSvgo({
-          plugins: [{ removeViewBox: false }]
-        })
+        // imageminSvgo({
+        //   plugins: [{
+        //     removeViewBox: false
+        //   }]
+        // })
       ])
     )
     .pipe(dest(".tmp/images/"))
@@ -330,13 +316,6 @@ export function generateResponsiveImages() {
         },
         options.responsive
       )
-    )
-    .pipe(
-      imagemin([
-        imageminPngquant({
-          quality: options.pngquant.quality
-        })
-      ])
     )
     .pipe(dest(".tmp/images/"))
     .pipe(plugins.wait(1000))

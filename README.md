@@ -4,10 +4,9 @@ Manually re-created Osmo shop homepage from the [original one](https://www.playo
 
 ## Features
 
-* Based on Bootstrap 4.1
-* Responsive/Adaptive design
+* Based on Bootstrap 4.5
 * Responsive images via HTML5 attributes and CSS3 media queries
-* PostCSS plugins: Autoprefixer and UnCSS
+* Extra styles are trimmed by UnCSS
 * Play/pause videos depending on their position on the screen
 * SVG sprite injected into HTML markup
 * Gotham font was replaced by free alternative Montserrat
@@ -28,10 +27,16 @@ Some other guides and approaches which I followed anyway:
 * “HTML/CSS Style Guide” by [Google](https://google.github.io/styleguide/htmlcssguide.html)
 * “Principles of writing consistent, idiomatic CSS” by [Necolas](https://github.com/necolas/idiomatic-css)
 
-## Google PSI
+## How to work with sources
 
-[This](https://brofox86.github.io/osmo-bootstrap-template/) template: <br>
-Mobile: 99/100 | Desktop: 100/100
-<br><br>
-[Original](https://www.playosmo.com/en/) website: <br>
-Mobile: 88/100 | Desktop: 56/100
+The project uses [Gulp](https://gulpjs.com) — a cross-platform, streaming task runner that automate all development tasks including a build process.
+
+1. Install [Node.js](https://nodejs.org/en/).
+2. For Windows, you may need to install a Unix shell command line interface, such as [Git Bash](https://git-scm.com/downloads).
+3. Check npm (node package manager) is installed via command prompt: `$ npm`.
+4. Run `$ npm install gulp-cli -g` to install Gulp CLI.
+5. Check Gulp CLI is installed via `$ gulp --help`.
+6. Open terminal from the sources folder and run `$ npm install`.
+7. Build the sources if necessary: `$ gulp cleanBuild`.
+
+More information can be found inside [gulpfile.babel.js](gulpfile.babel.js).
