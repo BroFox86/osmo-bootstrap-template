@@ -17,29 +17,29 @@ footer
 
       .d-flex.flex-column.flex-lg-row.align-items-center.justify-content-lg-between.mb-lg-3
         .d-flex.flex-column.flex-md-row.align-items-center.mb-4.mb-lg-0
-          p.mr-md-3.mb-md-0.text-center.text-md-left Sign up for our newsletter to hear about our new games and promotions!
+          p.mr-md-3.mb-md-0.text-center.text-md-left#signUpLabel Sign up for our newsletter to hear about our new games and promotions!
           form.position-relative(action="#")
-            input(type="email" placeholder="Your email address")
+            input(type="email" placeholder="Your email address" aria-labelledby="signUpLabel")
             button.form-btn.position-absolute.text-white(type="submit") Sign Up
 
         .d-flex.mb-2.mb-lg-0
-          a.btn.social.btn-facebook.position-relative.mr-3.rounded-circle(href="#")
+          a.btn.social.btn-facebook.position-relative.mr-3.rounded-circle(href="#" aria-label="Facebook")
             svg.x-center(width="20" height="20" fill="white")
               use(xlink:href="images/icons.svg#facebook")
 
-          a.btn.social.btn-twitter.position-relative.mr-3.rounded-circle(href="#")
+          a.btn.social.btn-twitter.position-relative.mr-3.rounded-circle(href="#" aria-label="Twitter")
             svg.x-center(width="20" height="20" fill="white")
               use(xlink:href="images/icons.svg#twitter")
 
-          a.btn.social.btn-instagram.position-relative.mr-3.rounded-circle(href="#")
+          a.btn.social.btn-instagram.position-relative.mr-3.rounded-circle(href="#" aria-label="Instagram")
             svg.x-center(width="20" height="20" fill="white")
               use(xlink:href="images/icons.svg#instagram")
 
-          a.btn.social.btn-pinterest.position-relative.mr-3.rounded-circle(href="#")
+          a.btn.social.btn-pinterest.position-relative.mr-3.rounded-circle(href="#" aria-label="Pinterest")
             svg.x-center(width="20" height="20" fill="white")
               use(xlink:href="images/icons.svg#pinterest")
 
-          a.btn.social.btn-youtube.position-relative.rounded-circle(href="#")
+          a.btn.social.btn-youtube.position-relative.rounded-circle(href="#" aria-label="Youtube")
             svg.x-center(width="20" height="20" fill="white")
               use(xlink:href="images/icons.svg#youtube")
 

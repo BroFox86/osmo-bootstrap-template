@@ -1,7 +1,7 @@
 .video-wrapper
   +video("main-video")(class="video d-none d-lg-block", data-toggle="mainVideo")
   img.video.d-block.d-lg-none(src="images/main-video.jpeg", alt="")
-  button.btn.x-btn-play.video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain")
+  button.btn.x-btn-play.video-btn(type="button" data-toggle="modal" data-target="#modalVideoMain" aria-label="Play video")
     svg(width="35" height="35" fill="white")
         use(xlink:href="images/icons.svg#play")
 

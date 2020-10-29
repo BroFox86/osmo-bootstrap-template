@@ -1,9 +1,10 @@
 .footer-top {
   background: #333;
+  color: white;
   font-size: 15px;
 
   .nav-link {
-    color: $gray-600;
+    color: inherit;
 
     &:hover {
       color: $gray-400;
@@ -20,7 +21,6 @@
 
   p {
     width: 300px;
-    color: $gray-500;
     font-family: $font-family-system;
   }
 
@@ -65,11 +65,12 @@
 
 .footer-bottom {
   background: #373737;
+  color: white;
   font-family: $font-family-system;
   font-size: 15px;
 
   .nav-link {
-    color: #727272;
+    color: inherit;
     font-family: $font-family-system;
 
     &:hover {
@@ -78,7 +79,7 @@
   }
 
   .caption {
-    color: $gray-500;
+    color: $gray-400;
     font-size: 12px;
   }
 }
