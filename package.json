@@ -76,7 +76,7 @@
     "postcss-pxtorem": "^5.1.1",
     "postcss-uncss": "^0.17.0",
     "pug-include-glob": "^0.4.2",
-    "stylelint": "^13.6.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-recommended": "^3.0.0",
     "uncss": "^0.17.3"
   }
